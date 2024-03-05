@@ -39,6 +39,7 @@ $routes->set404Override();
 // authentikasi
 $routes->get('/login', 'Auth::index'); //halaman login
 $routes->post('/login/auth', 'Auth::login'); //proses login
+$routes->get('/logout', 'Auth::logout'); //halaman logout
 
 $routes->get('/', 'Auth::index');
 $routes->get('/user', 'User::index');
