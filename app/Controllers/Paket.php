@@ -17,22 +17,22 @@ class Paket extends BaseController
     }
     public function index()
     {
-        $paket = $this->PaketModel->findAll();
+        // $paket = $this->PaketModel->findAll();
         $data = [
             'title' => $this->title,
             'paket' => $this->PaketModel->getAll()
         ];
+
         echo view('paket/index', $data);
     }
     public function new()
-    { {
-            $data = [
-                'title' => 'Tambah Paket',
-                'paket' => $this->JenisPaketModel->findAll()
-            ];
-            // dd($data);
-            echo view('paket/new', $data);
-        }
+    {
+        $data = [
+            'title' => 'Tambah Paket',
+            'paket' => $this->JenisPaketModel->findAll()
+        ];
+        // dd($data);
+        echo view('paket/new', $data);
     }
     public function create()
     {
