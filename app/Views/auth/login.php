@@ -1,120 +1,35 @@
-
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #59D5E0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.header {
-    width: 100%;
-    background-color: #005b96;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 1.8em;
-}
-
-.container {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 400px;
-    margin-top: 80px; 
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 100;
-}
-
-.login-form h2 {
-    text-align: center;
-    margin-bottom: 24px;
-    color: #333;
-}
-
-.login-form p {
-    text-align: center;
-    margin-bottom: 24px;
-    color: #666;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.login-form button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    background-color: #005b96;
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-
-.login-form button:hover {
-    background-color: #004080;
-}
-
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .container {
-        width: 90%;
-        margin-top: 120px; 
-    }
-}
-</style>
-
-<div class="container">
-	<div class="row justify-content-center my-2">
-		<div class="col-lg-5 mx-5 border border-success rounded bg-info text-white p-5">
-			<h1 class="text-center"><b>Permata Laundry</b></h1></br>
-			<h2><center><font size="5">Sign in</font></center></h2></br>
-			<form method="post" action="<?= base_url('login/auth') ?>"><td>
-			  <div class="form-group">
-			    <label for="username"><i class="fas fa-fw fa-user"></i> Nama Pengguna</label>
-			    <input required type="text" autocomplete="off" id="username" class="form-control rounded-pill" name="username">
-			  </div>
-              <br>
-			  <div class="form-group">
-			    <label for="password"><i class="fas fa-fw fa-lock"></i> Kata Sandi</label>
-			    <input required type="password" id="password" class="form-control rounded-pill" name="password">
-			  </div>
-			  <div class="input-field">
-			    <input type="submit" class="submit" value="Login">
-			  </div>
-			</form>
-			
-		</div>
-	</div>
+<div style="width: 1440px; height: 897px; position: relative; background: #5BE2EA">
+  <div style="width: 500px; height: 441px; left: 470px; top: 262px; position: absolute">
+    <div style="width: 500px; height: 441px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 30px; border: 2px #000957 solid; backdrop-filter: blur(4px)"></div>
+    <div style="left: 49px; top: 38px; position: absolute; color: #000957; font-size: 72px; font-family: Strait; font-weight: 400; word-wrap: break-word"> Login Panel</div>
+    
+    <div style="width: 367px; height: 27px; left: 69px; top: 203px; position: absolute">
+      <div style="width: 153px; height: 22px; left: 0px; top: 0px; position: absolute; color: #6D6D6D; font-size: 20px; font-family: Strait; font-weight: 400; word-wrap: break-word"><input type="text" id="username" name="username"required>Username</div>
+      <div style="width: 367px; height: 0px; left: 0px; top: 27px; position: absolute; border: 3px #000957 solid"></div>
+    </div>
+    <div style="width: 367px; height: 27px; left: 69px; top: 271px; position: absolute">
+      <div style="width: 153px; height: 22px; left: 0px; top: 0px; position: absolute; color: #6D6D6D; font-size: 20px; font-family: Strait; font-weight: 400; word-wrap: break-word"><input type="text" id="password" name="password"required>Password</div>
+      <div style="width: 367px; height: 0px; left: 0px; top: 27px; position: absolute; border: 3px #000957 solid"></div>
+    </div>
+    <div style="width: 200px; height: 71px; left: 150px; top: 339px; position: absolute">
+      <div style="width: 200px; height: 71px; left: 0px; top: 0px; position: absolute; background: #000957; border-radius: 20px"></div>
+      <div style="width: 200px; height: 70px; left: 0px; top: 0px; position: absolute; text-align: center; color: white; font-size: 40px; font-family: Strait; font-weight: 400; word-wrap: break-word">Login</div>
+    </div>
+  </div>
+  <div style="width: 1440px; height: 90px; left: 2px; top: 0px; position: absolute">
+    <div style="width: 1440px; height: 90px; left: 0px; top: 0px; position: absolute; background: #000957; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)"></div>
+    <div style="width: 60px; height: 40px; left: 1364px; top: 25px; position: absolute">
+      <div style="width: 60px; height: 0px; left: 0px; top: 0px; position: absolute; border: 8px white solid"></div>
+      <div style="width: 60px; height: 0px; left: 0px; top: 20px; position: absolute; border: 8px white solid"></div>
+      <div style="width: 60px; height: 0px; left: 0px; top: 40px; position: absolute; border: 8px white solid"></div>
+    </div>
+    <div style="width: 535px; height: 70px; left: 29px; top: 5px; position: absolute">
+      <div style="width: 448.32px; height: 70px; left: 86.68px; top: -0px; position: absolute; color: white; font-size: 48px; font-family: Mitr; font-weight: 400; word-wrap: break-word">Permata Laundry</div>
+      <div style="width: 68.74px; height: 60px; left: 0px; top: 10px; position: absolute">
+        <div style="width: 50.81px; height: 34px; left: 8.97px; top: 18px; position: absolute; border-radius: 9999px; border: 1px black solid"></div>
+        <div style="width: 68.74px; height: 60px; left: 0px; top: 0px; position: absolute; background: #000957; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 5px; border: 1px white solid"></div>
+        <div style="width: 49.32px; height: 32.78px; left: 9.71px; top: 18.50px; position: absolute; background: white; border: 1px white solid"></div>
+      </div>
+    </div>
+  </div>
 </div>
