@@ -1,19 +1,22 @@
+<form action='login/auth' method="post">
 <div style="width: 1440px; height: 897px; position: relative; background: #5BE2EA">
   <div style="width: 500px; height: 441px; left: 470px; top: 262px; position: absolute">
     <div style="width: 500px; height: 441px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 30px; border: 2px #000957 solid; backdrop-filter: blur(4px)"></div>
     <div style="left: 49px; top: 38px; position: absolute; color: #000957; font-size: 72px; font-family: Strait; font-weight: 400; word-wrap: break-word"> Login Panel</div>
     
     <div style="width: 367px; height: 27px; left: 69px; top: 203px; position: absolute">
-      <div style="width: 153px; height: 22px; left: 0px; top: 0px; position: absolute; color: #6D6D6D; font-size: 20px; font-family: Strait; font-weight: 400; word-wrap: break-word"><input type="text" id="username" name="username"required>Username</div>
-      <div style="width: 367px; height: 0px; left: 0px; top: 27px; position: absolute; border: 3px #000957 solid"></div>
+      <input type="text" id="username" name="username"required placeholder="Username" style="width: 367px; height: auto; left: 0px; top: 27px; position: absolute; border:0px; border-bottom: 3px #000957 solid; color: #6D6D6D; font-size: 20px; font-family: Strait; font-weight: 400; word-wrap: break-word">
+      <!-- <div style="width: 153px; height: 22px; left: 0px; top: 0px; position: absolute; color: #6D6D6D; font-size: 20px; font-family: Strait; font-weight: 400; word-wrap: break-word">
+      Username</div>
+      <div style="width: 367px; height: 0px; left: 0px; top: 27px; position: absolute; border: 3px #000957 solid"></div> -->
     </div>
     <div style="width: 367px; height: 27px; left: 69px; top: 271px; position: absolute">
-      <div style="width: 153px; height: 22px; left: 0px; top: 0px; position: absolute; color: #6D6D6D; font-size: 20px; font-family: Strait; font-weight: 400; word-wrap: break-word"><input type="text" id="password" name="password"required>Password</div>
-      <div style="width: 367px; height: 0px; left: 0px; top: 27px; position: absolute; border: 3px #000957 solid"></div>
-    </div>
+    <input type="text" id="password" name="password"required placeholder="Password" style="width: 367px; height: auto; left: 0px; top: 27px; position: absolute; border:0px; border-bottom: 3px #000957 solid; color: #6D6D6D; font-size: 20px; font-family: Strait; font-weight: 400; word-wrap: break-word">
+      <!-- <div style="width: 367px; height: 0px; left: 0px; top: 27px; position: absolute; border: 3px #000957 solid"></div>
+    --></div> 
     <div style="width: 200px; height: 71px; left: 150px; top: 339px; position: absolute">
-      <div style="width: 200px; height: 71px; left: 0px; top: 0px; position: absolute; background: #000957; border-radius: 20px"></div>
-      <div style="width: 200px; height: 70px; left: 0px; top: 0px; position: absolute; text-align: center; color: white; font-size: 40px; font-family: Strait; font-weight: 400; word-wrap: break-word">Login</div>
+      <input type="submit" value="Login" style="width: 200px; height: 71px; left: 0px; top: 0px; position: absolute; background: #000957; text-align: center; color: white; font-size: 20px; border-radius: 20px"></div>
+      <div style="width: 200px; height: 70px; left: 0px; top: 0px; position: absolute; text-align: center; color: white; font-size: 40px; font-family: Strait; font-weight: 400; word-wrap: break-word"></div>
     </div>
   </div>
   <div style="width: 1440px; height: 90px; left: 2px; top: 0px; position: absolute">
@@ -33,3 +36,4 @@
     </div>
   </div>
 </div>
+</form>
