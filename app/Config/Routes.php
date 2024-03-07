@@ -58,9 +58,9 @@ $routes->post('/jenispaket/(:any)', 'JenisPaket::update/$1');
 $routes->get('/jenispaket/(:any)/delete', 'JenisPaket::delete/$1');
 
 
-
-$routes->get('/dashboard', 'dashboard::index');
-$routes->post('/dashboard', 'dashboard::index');
+$routes->get('/dashboard','dashboard::index');
+$routes->get('dashboard/kasir','dashboard::index');
+$routes->get('dashboard/owner','dashboard::index');
 
 /*
  * --------------------------------------------------------------------
