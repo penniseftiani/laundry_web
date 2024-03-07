@@ -54,7 +54,14 @@ class Auth extends BaseController {
                 $this->session->set($data_login);
 
                 //masuk ke halaman dashboard
-                return redirect()->to('dashboard');
+                // cek jika role yang login adalah admin maka pindah ke dashboard admin, dan seterusnya
+                if($cekUser['role'] == 'admin'){
+                    return redirect()->to('dashboard');
+                } else if($cekUser['role'] == 'kasir'){
+                    return redirect()->to('dashboard/kasir');
+                } else if($cekUser['role'] == 'owner'){
+                    return redirect()->to('dashboard/owner');
+                }
 
             } else {
                 // jika password yang di masukan salah maka kembali ke halaman login
