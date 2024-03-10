@@ -10,22 +10,26 @@
             </div>
         </div>
     </div>
-    <div style="width: 282px; height: 630px; left: 3px; top: 91px; position: absolute; background: #4FDD5D"></div>
+    <div style="width: 282px; height: 630px; left: 3px; top: 91px; position: absolute; background: #95d36f"></div>
     <div style="width: 151px; height: 40.64px; left: 72px; top: 635.36px; position: absolute">
-        <div style="width: 151px; height: 40.64px; left: 0px; top: 40.64px; position: absolute; background: white; border-radius: 50px"></div>
-        <img style="width: 27.26px; height: 33.72px; left: 3.50px; top: 3.46px; position: absolute" src=<?= base_url("image/back_to.png")?>>
-        <div style="width: 134.92px; height: 40.64px; left: 16.08px; top: 0px; position: absolute; text-align: center; color: #5C9AE9; font-size: 21px; font-family: Rounded Mplus 1c; font-weight: 500; word-wrap: break-word">Back</div>
+        <div style="width: 151px; height: 40.64px; left: 0px; top: 40.64px; position: absolute; background: #B5C0D0; border-radius: 50px ; font-size: 21px; font-family: Rounded Mplus 1c; font-weight: 500; text-align: center; word-wrap: break-word; "><a href="<?= base_url('logout') ?>" style = "text-decoration: none">Logout</div>
     </div>
+    <!-- <div style="width: 151px; height: 40.64px; left: 0px; top: 40.64px; position: absolute; background: white; border-radius: 50px"><a href="<?= base_url('logout') ?>">Logout</div> -->
     <div style="width: 65px; height: 67px; left: 105px; top: 114px; position: absolute;  border-radius: 9999px"></div>
-    <div style="width: 89px; height: 17px; left: 92px; top: 193px; position: absolute; color: white; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">CUPITA SARI</div>
+    <div style="width: 89px; height: 17px; left: 92px; top: 193px; position: absolute; color: white; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">RIDHO ILAHI</div>
     <div style="width: 76px; height: 14px; left: 101px; top: 213px; position: absolute; color: white; font-size: 11px; font-family: Inter; font-weight: 400; word-wrap: break-word">Administrator</div>
     <div style="width: 177px; height: 23px; left: 54px; top: 264px; position: absolute; background: #D9D9D9"></div>
     <div style="width: 177px; height: 23px; left: 54px; top: 294px; position: absolute; background: #D9D9D9"></div>
     <div style="width: 177px; height: 22px; left: 54px; top: 326px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 105px; height: 20px; left: 88px; top: 386px; position: absolute; background: #3FF5F5"></div>
-    <div style="width: 80px; height: 18px; left: 65px; top: 297px; position: absolute; color: #45A6A1; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Profil</div>
-    <div style="width: 93px; height: 14px; left: 65px; top: 329px; position: absolute; color: #45A6A1; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Paket</div>
-    <input type ="submit" value="Logout" style="width: 92p x; height: auto; left: 111px; top: 387px; position: absolute; color: #45A6A1; font-size: 14px; font-family: Inter; font-weight: 800; word-wrap: break-word"><a href="<?= site_url('logout') ?>">Logout</a></div>
+    <!-- <div style="width: 105px; height: 20px; left: 88px; top: 386px; position: absolute; background: #3FF5F5"></div> -->
+    <div style="width: 80px; height: 18px; left: 65px; top: 297px; position: absolute; color: #45A6A1; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word;"><select id="menu" name="menu" style="#">
+    <option value="pilihan1" style="display: block; padding: 20px 25px; color: #FFF; text-decoration: none; text-align: center; font-size: 20px;width: 100%; background: #22438C; position: absolute; z-index: 999; display: none;">Kelola User</option>
+    <option value="pilihan2">Kelola Member</option>
+    </select></div>
+    <div style="width: 93px; height: 14px; left: 65px; top: 329px; position: absolute; color: #45A6A1; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word"><select id="menu" name="menu" style="#"></option>
+    <option value="pilihan2">Kelola Paket</option>
+    <option value="pilihan2">Kelola Jenis Paket</option>
+    </select></div>
     <div style="width: 80px; height: 15px; left: 65px; top: 266px; position: absolute; color: #45A6A1; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Dashboard</div>
     <div style="width: 258px; height: 43px; left: 337px; top: 153px; position: absolute; color: black; font-size: 28px; font-family: Sansita One; font-weight: 400; word-wrap: break-word">DASHBOARD</div>
     <div style="width: 1004px; height: 45px; left: 328px; top: 205px; position: absolute; background: #95D36F"></div>
