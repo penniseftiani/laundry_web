@@ -58,9 +58,12 @@ $routes->post('/jenispaket/(:any)', 'JenisPaket::update/$1');
 $routes->get('/jenispaket/(:any)/delete', 'JenisPaket::delete/$1');
 
 
-$routes->get('/dashboard','dashboard::index');
-$routes->get('dashboard/kasir','dashboard::index');
-$routes->get('dashboard/owner','dashboard::index');
+$routes->get('dashboard/admin','dashboard::admin');
+$routes->get('dashboard/kasir','dashboard::kasir');
+$routes->get('dashboard/owner','dashboard::owner');
+$routes->get('dashboard/paket','dashboard::paket');
+$routes->get('dashboard/tambahpaket','dashboard::tambahpaket');
+$routes->post('dashboard/tambahpaket','dashboard::tambahpaket');
 
 /*
  * --------------------------------------------------------------------
