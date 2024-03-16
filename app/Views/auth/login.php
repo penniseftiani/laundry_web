@@ -1,5 +1,5 @@
 <form action='login/auth' method="post">
-  <!-- ini perubahan -->
+  <!-- ini push -->
 <div style="width: 1440px; height: 897px; position: relative; background: #5BE2EA">
   <div style="width: 500px; height: 441px; left: 470px; top: 262px; position: absolute">
     <div style="width: 500px; height: 441px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 30px; border: 2px #000957 solid; backdrop-filter: blur(4px)"></div>
