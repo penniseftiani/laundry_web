@@ -17,7 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Auth');
+$routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -39,9 +39,9 @@ $routes->set404Override();
 // authentikasi
 $routes->get('/login', 'Auth::index'); //halaman login
 $routes->post('/login/auth', 'Auth::login'); //proses login
-$routes->get('/logout', 'Auth::logout'); //halaman logout
+$routes->get('logout', 'dashboard::logout');
 
-$routes->get('/', 'Auth::index');
+$routes->get('/', 'Home::index');
 $routes->get('/user', 'User::index');
 $routes->get('/user/new', 'User::new');
 $routes->post('/user', 'User::create');
@@ -58,12 +58,18 @@ $routes->post('/jenispaket/(:any)', 'JenisPaket::update/$1');
 $routes->get('/jenispaket/(:any)/delete', 'JenisPaket::delete/$1');
 
 
+
 $routes->get('dashboard/admin','dashboard::admin');
 $routes->get('dashboard/kasir','dashboard::kasir');
 $routes->get('dashboard/owner','dashboard::owner');
 $routes->get('dashboard/paket','dashboard::paket');
 $routes->get('dashboard/tambahpaket','dashboard::tambahpaket');
 $routes->post('dashboard/tambahpaket','dashboard::tambahpaket');
+$routes->get('dashboard','dashboard::admin');
+// $routes->get('coba','dashboard::kasir');
+
+
+
 
 /*
  * --------------------------------------------------------------------

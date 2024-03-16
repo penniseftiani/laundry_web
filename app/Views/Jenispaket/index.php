@@ -1,30 +1,20 @@
-`
-<!DOCTYPE html>
-<html>
+<?= $this->extend('template/index') ?>
 
-<head>
-    <title>user</title>
-</head>
-
-<body>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <a href="<?= base_url('jenispaket/new'); ?>" type="button" class="btn btn-primary btn-sm mb-3">Tambah</a>
-                        <table id="example2" class="table table-bordered table-hover ">
-                            <thead class="text-center">
-                                <tr>
-                                    <th>NO</th>
-                                    <th>username</th>
-                                </tr>
-                            </thead>
-                            </thead>
-                            <tbody>
-                                <?php $a = 1;
+<?= $this->section('content') ?>
+<div class="tabular--wrapper">
+                <h3 class="main--title">Kelola Jenis Paket permata Laundry</h3>
+                <a href="<?= base_url('jenispaket/new'); ?>" style="text-decoration: none; margin:none" class="btn btn-primary btn-sm mb-3">Tambah</a>
+                <div class="table--container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>Jenis Paket</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php $a = 1;
                                 foreach ($jenis_paket as $j) : ?>
                                     <tr>
                                         <td><?= $a++; ?></td>
@@ -35,21 +25,8 @@
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
+                        </tbody>
+                    </table>
                 </div>
-                <!-- /.card -->
             </div>
-            <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-    </div>
-    <!-- /.col -->
-    </div>
-    <!-- /.row -->
-    </div>
-</body>
-
-</html>`
+<?= $this->endSection('content') ?>

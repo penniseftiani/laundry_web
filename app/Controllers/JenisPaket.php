@@ -22,13 +22,13 @@ class JenisPaket extends BaseController
         echo view('jenispaket/index', $data);
     }
     public function new()
-    { {
+    { 
             $data = [
                 'title' => 'Tambah Jenis Paket',
             ];
             // dd($data);
             echo view('jenispaket/new', $data);
-        }
+        
     }
     public function create()
     {

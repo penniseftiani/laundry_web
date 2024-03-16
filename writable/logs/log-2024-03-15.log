@@ -1,0 +1,49 @@
+CRITICAL - 2024-03-15 19:42:03 --> Invalid file: dashboard/dashboard.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('dashboard/dashboard', [], true)
+ 3 APPPATH\Controllers\dashboard.php(9): view('dashboard/dashboard')
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-15 21:15:21 --> file_get_contents(C:\xampp\htdocs\laundry_web\writable\debugbar/debugbar_1710552580.160692.json): failed to open stream: No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 82.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(C:\\xampp\\htdocs\\laundry_web\\writable\\debugbar/debugbar_1710552580.160692.json): failed to open stream: No such file or directory', 'SYSTEMPATH\\Debug\\Toolbar\\Collectors\\History.php', 82, [...])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(82): file_get_contents('ROOTPATH\\writable\\debugbar/debugbar_1710552580.160692.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(495): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1710555292.639320', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(472): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(46): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(326): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-15 21:15:22 --> unlink(C:\xampp\htdocs\laundry_web\writable\debugbar/debugbar_1710552580.160692.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\laundry_web\\writable\\debugbar/debugbar_1710552580.160692.json): No such file or directory', 'SYSTEMPATH\\Debug\\Toolbar\\Collectors\\History.php', 76, [...])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(76): unlink('ROOTPATH\\writable\\debugbar/debugbar_1710552580.160692.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(495): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1710555244.993381', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(472): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(46): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(326): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-15 21:18:10 --> unlink(C:\xampp\htdocs\laundry_web\writable\debugbar/debugbar_1710552599.746106.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\laundry_web\\writable\\debugbar/debugbar_1710552599.746106.json): No such file or directory', 'SYSTEMPATH\\Debug\\Toolbar\\Collectors\\History.php', 76, [...])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(76): unlink('ROOTPATH\\writable\\debugbar/debugbar_1710552599.746106.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(495): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1710555466.170575', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(472): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(46): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(326): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-15 21:25:27 --> unlink(C:\xampp\htdocs\laundry_web\writable\debugbar/debugbar_1710552832.980482.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\laundry_web\\writable\\debugbar/debugbar_1710552832.980482.json): No such file or directory', 'SYSTEMPATH\\Debug\\Toolbar\\Collectors\\History.php', 76, [...])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(76): unlink('ROOTPATH\\writable\\debugbar/debugbar_1710552832.980482.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(495): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1710555905.422437', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(472): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(46): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(326): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

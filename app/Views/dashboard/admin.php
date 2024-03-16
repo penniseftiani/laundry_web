@@ -1,47 +1,64 @@
-<!DOCTYPE html>
-<html>
+<?= $this->extend('template/index') ?>
 
-<head>
-    <title>user</title>
-</head>
+<?= $this->section('content') ?>
 
-<body>
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <div class="card-title">New Data user</div>
-                            </div>
-                            <form action="<?= base_url('user'); ?>" method="post">
-                                <?= csrf_field(); ?>
-                                <div class="card-body">
-                                    <div class="mb-3">
-                                        <label for="basic-url" class="form-label">username</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="username" name="username" aria-describedby="basic-addon3 basic-addon4" autofocus>
-                                        </div>
-                                        <label for="basic-url" class="form-label">password</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="password" name="password" aria-describedby="basic-addon3 basic-addon4" autofocus>
-                                        </div>
-                                        <label for="basic-url" class="form-label">role</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="role" name="role" aria-describedby="basic-addon3 basic-addon4" autofocus>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary my-2">Submit</button>
-                                        <a href="<?= base_url('mobil'); ?>" class="btn btn-secondary">Batal</a>
-                                    </div>
-                                </div>
-                            </form>
+<div class="tabular--wrapper">
+        <div class="card--container">
+            <h3 class="main--title">Data Laundry</h3>
+            <div class="card--wrapper">
+                <div class="payment--card light-red">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">
+                                Detail Transaksi
+                            </span>
+                            <span class="amount--value">Rp500.00</span>
                         </div>
+                        <i class="fas fa-rupiah-sign icon"></i>
                     </div>
+                    <span class="card-detail">****</span>
+                </div>
+                <div class="payment--card light-purple">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">
+                                Jumlah Order Cucian
+                            </span>
+                            <span class="amount--value">20 Prs</span>
+                        </div>
+                        <i class="fas fa-list icon dark-purple" ></i>
+                    </div>
+                    <span class="card-detail">****</span>
+                </div>
+                <div class="payment--card light-blue">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">
+                                Status Cucian
+                            </span>
+                            <span class="amount--value">Selesai</span>
+                        </div>
+                        <i class="fas fa-check icon dark-blue"></i>
+                    </div>
+                    <span class="card-detail">****</span>
+                </div>
                 </div>
             </div>
-        </div>
-    </section>
-</body>
-
-</html>
+            <div class="tabular--wrapper">
+                <h3 class="main--title">Ringkasan Data Transaksi</h3>
+                <div class="table--container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Kode Invoice</th>
+                                <th>Nama Pelanggan</th>
+                                <th>Jenis Paket</th>
+                                <th>Harga</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <?= $this->endSection('content') ?>
