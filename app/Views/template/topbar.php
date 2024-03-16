@@ -8,6 +8,6 @@
                 <i class="fa-solid fa-search"></i>
                 <input type="text" placeholder="Serach"/>
                 </div>
-                <img src="<?= base_url('image/cupita.jpg') ?>" alt=""/>
+                <img src="<?= base_url('assets/dist/img/order_map.png') ?>" alt=""/>
             </div>
         </div>

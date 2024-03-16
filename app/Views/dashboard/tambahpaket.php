@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Paket</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/tp.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/tp.css') ?>"> 
 </head>
 <body>
 <div class="container">
@@ -32,7 +32,7 @@
         <input type="password" id="password" name="password" required>
         <span class="error-message" id="error-password"></span><br> -->
         
-        <input type="submit" value="Kirim" class="btn btn-primary"><input type="submit" value="Batal">
+        <input type="submit" value="Kirim" class="btn btn-primary"><input type="submit" value="Batal" class="btn btn-danger">
         
     </form>
 </div>

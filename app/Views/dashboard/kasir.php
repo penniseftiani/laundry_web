@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Kasir</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/b.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/b.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body class="body-admin">

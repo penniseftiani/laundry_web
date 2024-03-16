@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kelola Paket</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/b.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/b.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body class="body-admin">
@@ -11,15 +11,21 @@
         <div class="logo"></div>
         <ul class="menu">
             <li class="active">
-                <a href="">
+                <a href="<?= base_url('dashboard'); ?>">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="<?= base_url('paket'); ?>">
                     <i class="fas fa-chart-bar"></i>
                     <span>Kelola Paket</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('jenispaket'); ?>">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Kelola Jenis Paket</span>
                 </a>
             </li>
             <li>
