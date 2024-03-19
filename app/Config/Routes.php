@@ -17,7 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Auth');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -39,9 +39,9 @@ $routes->set404Override();
 // authentikasi
 $routes->get('/login', 'Auth::index'); //halaman login
 $routes->post('/login/auth', 'Auth::login'); //proses login
-$routes->get('logout', 'dashboard::logout');
+$routes->get('/logout', 'Auth::logout'); //halaman logout
 
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Auth::index');
 $routes->get('/user', 'User::index');
 $routes->get('/user/new', 'User::new');
 $routes->post('/user', 'User::create');
@@ -57,19 +57,16 @@ $routes->get('/jenispaket/(:any)/edit', 'JenisPaket::edit/$1');
 $routes->post('/jenispaket/(:any)', 'JenisPaket::update/$1');
 $routes->get('/jenispaket/(:any)/delete', 'JenisPaket::delete/$1');
 
+$routes->get('/paket', 'Paket::index');
+$routes->get('/paket/new', 'Paket::new');
+$routes->post('/paket', 'Paket::create');
+$routes->get('/paket/(:any)/edit', 'Paket::edit/$1');
+$routes->post('/paket/(:any)', 'Paket::update/$1');
+$routes->get('/paket/(:any)/delete', 'Paket::delete/$1');
 
 
-$routes->get('dashboard/admin','dashboard::admin');
-$routes->get('dashboard/kasir','dashboard::kasir');
-$routes->get('dashboard/owner','dashboard::owner');
-$routes->get('paket','dashboard::paket');
-$routes->get('tambahpaket','dashboard::tambahpaket');
-$routes->post('dashboard/tambahpaket','dashboard::tambahpaket');
-$routes->get('dashboard','dashboard::admin');
-// $routes->get('coba','dashboard::kasir');
-
-
-
+$routes->get('/dashboard', 'dashboard::admin');
+$routes->post('/dashboard', 'dashboard::index');
 
 /*
  * --------------------------------------------------------------------

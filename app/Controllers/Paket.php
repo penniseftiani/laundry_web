@@ -29,7 +29,8 @@ class Paket extends BaseController
     {
         $data = [
             'title' => 'Tambah Paket',
-            'paket' => $this->JenisPaketModel->findAll()
+            'paket' => $this->PaketModel->findAll(),
+            'jenis_paket' => $this->JenisPaketModel->findAll()
         ];
         // dd($data);
         echo view('paket/new', $data);
@@ -37,12 +38,12 @@ class Paket extends BaseController
     public function create()
     {
         $data = [
-            'nama_paket' => $this->request->getPost('nama_jenis_paket'),
+            'nama_paket' => $this->request->getPost('nama_paket'),
             'harga_paket' => $this->request->getPost('harga_paket'),
-            'id_jenis_paket' => $this->request->getPost('id_jenis_paket')
+            'jenis_paket' => $this->request->getPost('id_jenis_paket')
         ];
-        $this->JenisPaketModel->save($data);
-        // dd($data);
+        $this->PaketModel->save($data);
+        //dd($data);
         return redirect()->to('paket');
     }
     public function edit($id_paket = false)
@@ -58,8 +59,9 @@ class Paket extends BaseController
             'jenis_paket' => $this->JenisPaketModel->findAll(),
             'paket' => $result
         ];
+        //dd($data);
 
-        echo view('jenispaket/edit', $data);
+        echo view('paket/edit', $data);
     }
     public function update($id = false)
     {

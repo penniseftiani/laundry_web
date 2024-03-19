@@ -1,45 +1,31 @@
-<!DOCTYPE html>
-<html>
+<?= $this->extend('template/index') ?>
 
-<head>
-    <title>user</title>
-</head>
+<?= $this->section('content') ?>
 
-<body>
-    </tbody>
-    </table>
+<div class="tabular--wrapper">
+    <h3 class="main--title">Kelola User permata Laundry</h3>
+    <div class="card-header">
+        <div class="card-title">Edit User</div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6">
-                <div class="card">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <div class="card-title">New user</div>
-                        </div>
-                        <?= $validation->listErrors(); ?>
-                        <form action="<?= base_url('user/' . $user['id']); ?>" method="post">
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label for="basic-url" class="form-label">username</label>
-                                    <div class="input-group">
-                                        <?= csrf_field(); ?>
-                                        <input value="<?= $user['username']; ?>" type="text" class="form-control" id="username" name="username" aria-describedby="basic-addon3 basic-addon4" autofocus>
-                                    </div>
-                                    <label for="basic-url" class="form-label">password</label>
-                                    <div class="input-group">
-                                        <input value="<?= $user['password']; ?>" type="text" class="form-control" id="password" name="password" aria-describedby="basic-addon3 basic-addon4" autofocus>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary my-2">Submit</button>
-                                    <a href="<?= base_url('user'); ?>" class="btn btn-secondary">Batal</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+    <?= $validation->listErrors(); ?>
+    <form action="<?= base_url('user/' . $user['id']); ?>" method="post">
+        <div class="card-body">
+            <div class="mb-3">
+                <?= csrf_field(); ?>
+                <label for="username">Username</label>
+                <div class="mb-3">
+                    <input value="<?= $user['username']; ?>" type="text" class="form-control" id="username" name="username" aria-describedby="basic-addon3 basic-addon4" autofocus>
                 </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>
+                <label for="username">Password</label>
+                <div class="mb-3">
+                    <input value="<?= $user['password']; ?>" type="text" class="form-control" id="password" name="password" aria-describedby="basic-addon3 basic-addon4" autofocus>
+                </div>
+                <label for="username">Jabatan</label>
+                <div>
+                    <input value="<?= $user['role']; ?>" type="text" class="form-control" id="role" name="role" aria-describedby="basic-addon3 basic-addon4" autofocus>
+                </div>
+                <button type="submit" class="btn btn-primary my-2">Submit</button>
+                <a href="<?= base_url('user'); ?>" class="btn btn-secondary">Batal</a>
+    </form>
+</div>
+<?= $this->endSection('content') ?>

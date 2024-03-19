@@ -38,7 +38,7 @@ class User extends BaseController
             'role' => $this->request->getPost('role')
         ];
         $this->UserModel->save($data);
-        // dd($data);
+        //dd($data);
         return redirect()->to('user');
     }
     public function edit($id = false)
