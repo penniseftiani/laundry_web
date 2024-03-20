@@ -40,10 +40,10 @@ class Paket extends BaseController
         $data = [
             'nama_paket' => $this->request->getPost('nama_paket'),
             'harga_paket' => $this->request->getPost('harga_paket'),
-            'jenis_paket' => $this->request->getPost('id_jenis_paket')
+            'id_jenis_paket' => $this->request->getPost('id_jenis_paket')
         ];
         $this->PaketModel->save($data);
-        //dd($data);
+        dd($data);
         return redirect()->to('paket');
     }
     public function edit($id_paket = false)
