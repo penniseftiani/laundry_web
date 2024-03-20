@@ -6,9 +6,13 @@ class dashboard extends BaseController
 {
     public function admin()
     {
+        //kalau belum login di kembalikan ke halaman login
+        if (!session()->get('logged_in')) {
+            return redirect()->to('login');
+        }
         return view('dashboard/admin');
     }
-    
+
     public function logout()
     {
         // Mengambil instance dari session
@@ -20,7 +24,7 @@ class dashboard extends BaseController
         // Redirect ke halaman login atau halaman lain yang sesuai
         return redirect()->to(base_url('login'));
     }
-    
+
     public function kasir()
     {
         return view('dashboard/kasir');

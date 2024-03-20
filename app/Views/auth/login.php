@@ -18,7 +18,7 @@
                 <label for="">Username</label>
                 <input type="text" id="username" name="username" required placeholder="Username">
                 <label for="">Password</label>
-                <input type="text" id="password" name="password" required placeholder="Password">
+                <input type="password" id="password" name="password" required placeholder="Password">
                 <button>Login</button>
                 <p>
                     <a href="">Forgot password ?</a>

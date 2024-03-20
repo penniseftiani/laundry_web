@@ -10,7 +10,6 @@
                 <tr>
                     <th>NO</th>
                     <th>Username</th>
-                    <th>Password</th>
                     <th>Role</th>
                     <th>Aksi</th>
                 </tr>
@@ -21,7 +20,6 @@
                     <tr>
                         <td><?= $a++; ?></td>
                         <td><?= $u['username']; ?></td>
-                        <td><?= $u['password']; ?></td>
                         <td><?= $u['role']; ?></td>
                         <td>
                             <a href="<?= base_url('user') . '/' . $u['id'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post">Delete</a>

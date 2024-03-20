@@ -66,6 +66,8 @@ $routes->get('/paket/(:any)/delete', 'Paket::delete/$1');
 
 
 $routes->get('/dashboard', 'dashboard::admin');
+$routes->get('/dashboard/kasir', 'dashboard::kasir');
+$routes->get('/dashboard/owner', 'dashboard::owner');
 $routes->post('/dashboard', 'dashboard::index');
 
 /*

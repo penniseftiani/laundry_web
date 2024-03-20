@@ -8,6 +8,12 @@
             </a>
         </li>
         <li>
+            <a href="<?= base_url(''); ?>">
+                <i class="fas fa-chart-bar"></i>
+                <span>kelola member</span>
+            </a>
+        </li>
+        <li>
             <a href="<?= base_url('paket'); ?>">
                 <i class="fas fa-chart-bar"></i>
                 <span>Kelola Paket</span>
