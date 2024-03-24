@@ -64,6 +64,13 @@ $routes->get('/paket/(:any)/edit', 'Paket::edit/$1');
 $routes->post('/paket/(:any)', 'Paket::update/$1');
 $routes->get('/paket/(:any)/delete', 'Paket::delete/$1');
 
+$routes->get('/member', 'member::index');
+$routes->get('/member/new', 'member::new');
+$routes->post('/member', 'member::create');
+$routes->get('/member/(:any)/edit', 'member::edit/$1');
+$routes->post('/member/(:any)', 'member::update/$1');
+$routes->get('/member/(:any)/delete', 'member::delete/$1');
+
 
 $routes->get('/dashboard', 'dashboard::admin');
 $routes->get('/dashboard/kasir', 'dashboard::kasir');

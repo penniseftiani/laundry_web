@@ -1,8 +1,11 @@
 <?= $this->extend('template/index') ?>
 
+<?= $this->section('judul') ?>Halaman Kelola Jenis Paket
+<?= $this->endSection('content') ?>
+
 <?= $this->section('content') ?>
 <div class="tabular--wrapper">
-                <h3 class="main--title">Kelola Jenis Paket permata Laundry</h3>
+                <h3 class="main--title">Kelola Jenis Paket Permata Laundry</h3>
                 <a href="<?= base_url('jenispaket/new'); ?>" style="text-decoration: none; margin:none" class="btn btn-primary btn-sm mb-3">Tambah</a>
                 <div class="table--container">
                     <table>

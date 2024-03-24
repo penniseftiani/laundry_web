@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="tabular--wrapper">
-    <h3 class="main--title">Kelola Jenis Paket permata Laundry</h3>
+    <h3 class="main--title">Kelola Jenis Paket Permata Laundry</h3>
     <?= $validation->listErrors(); ?>
     <form action="<?= base_url('jenispaket/' . $jenis_paket['id_jenis_paket']); ?>" method="post">
         <div class="card-body">

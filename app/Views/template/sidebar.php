@@ -8,9 +8,9 @@
             </a>
         </li>
         <li>
-            <a href="<?= base_url(''); ?>">
+            <a href="<?= base_url('member'); ?>">
                 <i class="fas fa-chart-bar"></i>
-                <span>kelola member</span>
+                <span>Kelola Member</span>
             </a>
         </li>
         <li>

@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="tabular--wrapper">
-    <h3 class="main--title">Kelola Jenis Paket permata Laundry</h3>
+    <h3 class="main--title">Kelola Jenis Paket Permata Laundry</h3>
     <h2>Tambah Jenis Paket</h2>
     <form action="<?= base_url('jenispaket'); ?>" method="post">
         <label for="nama_jenis_paket">Nama Jenis Paket:</label>

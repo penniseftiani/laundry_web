@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="tabular--wrapper">
-    <h3 class="main--title">Kelola User permata Laundry</h3>
+    <h3 class="main--title">Kelola User Permata Laundry</h3>
     <div class="card-header">
         <div class="card-title">Edit User</div>
     </div>
