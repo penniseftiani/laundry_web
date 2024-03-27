@@ -23,7 +23,7 @@
                                         <td><?= $a++; ?></td>
                                         <td><?= $j['nama_jenis_paket']; ?></td>
                                         <td>
-                                            <a href="<?= base_url('jenispaket') . '/' . $j['id_jenis_paket'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post">Delete</a>
+                                            <a href="<?= base_url('jenispaket') . '/' . $j['id_jenis_paket'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post" onclick= "return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
                                             <a href="<?= base_url('jenispaket') . '/' . $j['id_jenis_paket'] . '/' . ('edit'); ?>" type="button" class="btn btn-warning btn-sm">Edit</a>
                                         </td>
                                     </tr>

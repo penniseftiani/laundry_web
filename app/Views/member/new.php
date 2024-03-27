@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="tabular--wrapper">
-    <h3 class="main--title">Kelola Memeber permata Laundry</h3>
+    <h3 class="main--title">Kelola Member permata Laundry</h3>
     <h2>Tambah Member</h2>
     <form action="<?= base_url('member'); ?>" method="post">
         <label for="nama" class="form-label">Nama</label>
@@ -19,6 +19,7 @@
             <input type="text" class="form-control" id="telepon" name="telepon" aria-describedby="basic-addon3 basic-addon4">
         </div>
         <input type="submit" value="Kirim" class="btn btn-primary">
+
         <a href="<?= base_url('member'); ?>" class="btn btn-danger">Batal</a>
     </form>
 </div>

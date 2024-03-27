@@ -71,6 +71,12 @@ $routes->get('/member/(:any)/edit', 'member::edit/$1');
 $routes->post('/member/(:any)', 'member::update/$1');
 $routes->get('/member/(:any)/delete', 'member::delete/$1');
 
+$routes->get('/transaksi', 'transaksi::index');
+$routes->get('/transaksi/new', 'transaksi::new');
+$routes->post('/transaksi', 'transaksi::create');
+$routes->get('/transaksi/(:any)/edit', 'transaksi::edit/$1');
+$routes->post('/transaksi/(:any)', 'transaksi::update/$1');
+$routes->get('/transaksi/(:any)/delete', 'transaksi::delete/$1');
 
 $routes->get('/dashboard', 'dashboard::admin');
 $routes->get('/dashboard/kasir', 'dashboard::kasir');

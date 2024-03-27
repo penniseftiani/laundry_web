@@ -9,8 +9,14 @@
         </li>
         <li>
             <a href="<?= base_url('member'); ?>">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-user-alt"></i>
                 <span>Kelola Member</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?= base_url('transaksi'); ?>">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Kelola Transaksi</span>
             </a>
         </li>
         <li>
@@ -27,7 +33,7 @@
         </li>
         <li>
             <a href="<?= base_url('user'); ?>">
-                <i class="fas fa-user-alt"></i>
+                <i class="fa-regular fa-circle-user"></i>
                 <span>Kelola User</span>
             </a>
         </li>

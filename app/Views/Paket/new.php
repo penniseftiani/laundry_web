@@ -4,7 +4,7 @@
 
 <div class="tabular--wrapper">
     <h3 class="main--title">Kelola Jenis Paket Permata Laundry</h3>
-    <h2>Tambah Jenis Paket</h2>
+    <h2>Tambah Paket</h2>
     <form action="<?= base_url('paket'); ?>" method="post">
         <label for="basic-url" class="form-label">Nama Paket</label>
         <div class="input-group">
