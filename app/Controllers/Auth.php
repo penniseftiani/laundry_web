@@ -44,6 +44,7 @@ class Auth extends BaseController
 
                 // menyiapkan data yang masuk
                 $data_login = [
+                    'id' => $cekUser['id'],
                     'username' => $cekUser['username'],
                     'role' => $cekUser['role'],
                     'logged_in' => true,

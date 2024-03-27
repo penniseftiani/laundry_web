@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2024 at 03:24 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 27 Mar 2024 pada 17.16
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,21 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_transaksi`
+-- Struktur dari tabel `detail_transaksi`
 --
 
 CREATE TABLE `detail_transaksi` (
   `id_detail_transaksi` int(11) NOT NULL,
   `id_paket` int(11) NOT NULL,
   `qty` float NOT NULL,
-  `id_transaksi` int(11) NOT NULL,
-  `subtotal` int(11) NOT NULL
+  `subtotal` int(11) NOT NULL,
+  `id_transaksi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `detail_transaksi`
+--
+
+INSERT INTO `detail_transaksi` (`id_detail_transaksi`, `id_paket`, `qty`, `subtotal`, `id_transaksi`) VALUES
+(2, 15, 2, 2400, 4),
+(4, 14, 1, 12000, 4),
+(5, 15, 3, 3600, 4),
+(6, 15, 2, 2400, 5),
+(7, 14, 2, 24000, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_paket`
+-- Struktur dari tabel `jenis_paket`
 --
 
 CREATE TABLE `jenis_paket` (
@@ -47,7 +58,7 @@ CREATE TABLE `jenis_paket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `jenis_paket`
+-- Dumping data untuk tabel `jenis_paket`
 --
 
 INSERT INTO `jenis_paket` (`id_jenis_paket`, `nama_jenis_paket`) VALUES
@@ -57,7 +68,7 @@ INSERT INTO `jenis_paket` (`id_jenis_paket`, `nama_jenis_paket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Struktur dari tabel `member`
 --
 
 CREATE TABLE `member` (
@@ -68,7 +79,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `member`
+-- Dumping data untuk tabel `member`
 --
 
 INSERT INTO `member` (`id_member`, `nama`, `alamat`, `telepon`) VALUES
@@ -79,7 +90,7 @@ INSERT INTO `member` (`id_member`, `nama`, `alamat`, `telepon`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paket`
+-- Struktur dari tabel `paket`
 --
 
 CREATE TABLE `paket` (
@@ -90,7 +101,7 @@ CREATE TABLE `paket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `paket`
+-- Dumping data untuk tabel `paket`
 --
 
 INSERT INTO `paket` (`id_paket`, `nama_paket`, `harga_paket`, `id_jenis_paket`) VALUES
@@ -100,7 +111,7 @@ INSERT INTO `paket` (`id_paket`, `nama_paket`, `harga_paket`, `id_jenis_paket`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -111,10 +122,18 @@ CREATE TABLE `pembayaran` (
   `kembalian` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_transaksi`, `total_harga`, `uang_yang_dibayar`, `kembalian`) VALUES
+(1, 4, 18000, 0, 0),
+(2, 5, 26400, 0, 0);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -132,10 +151,18 @@ CREATE TABLE `transaksi` (
   `telepon` varchar(13) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `kode_invoice`, `tgl_transaksi`, `total`, `tanggal_selesai`, `status_cucian`, `status_bayar`, `id_user`, `id_member`, `nama`, `alamat`, `telepon`) VALUES
+(4, 29010, '2024-03-27 00:00:00', 0, '2024-03-29 00:00:00', 'baru', 'belum lunas', 1, 3, '', '', ''),
+(5, 8999, '2024-03-28 00:00:00', 0, '2024-03-28 00:00:00', 'baru', 'belum lunas', 4, 2, 'RENDI', 'Jl.Pagaden Barat, Kec.Subang', '999888777');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -146,7 +173,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
@@ -160,35 +187,33 @@ INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
 --
 
 --
--- Indexes for table `detail_transaksi`
+-- Indeks untuk tabel `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail_transaksi`),
-  ADD UNIQUE KEY `FOREIGN KEY` (`id_transaksi`),
-  ADD KEY `id_transaksi` (`id_transaksi`),
   ADD KEY `id_paket` (`id_paket`);
 
 --
--- Indexes for table `jenis_paket`
+-- Indeks untuk tabel `jenis_paket`
 --
 ALTER TABLE `jenis_paket`
   ADD PRIMARY KEY (`id_jenis_paket`);
 
 --
--- Indexes for table `member`
+-- Indeks untuk tabel `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`id_member`);
 
 --
--- Indexes for table `paket`
+-- Indeks untuk tabel `paket`
 --
 ALTER TABLE `paket`
   ADD PRIMARY KEY (`id_paket`),
   ADD KEY `FK` (`id_jenis_paket`);
 
 --
--- Indexes for table `pembayaran`
+-- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
@@ -196,7 +221,7 @@ ALTER TABLE `pembayaran`
   ADD KEY `id_transaksi` (`id_transaksi`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`),
@@ -207,72 +232,65 @@ ALTER TABLE `transaksi`
   ADD KEY `id_member` (`id_member`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `detail_transaksi`
+-- AUTO_INCREMENT untuk tabel `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail_transaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detail_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `jenis_paket`
+-- AUTO_INCREMENT untuk tabel `jenis_paket`
 --
 ALTER TABLE `jenis_paket`
   MODIFY `id_jenis_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `member`
+-- AUTO_INCREMENT untuk tabel `member`
 --
 ALTER TABLE `member`
   MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `paket`
+-- AUTO_INCREMENT untuk tabel `paket`
 --
 ALTER TABLE `paket`
   MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `pembayaran`
+-- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `detail_transaksi`
---
-ALTER TABLE `detail_transaksi`
-  ADD CONSTRAINT `detail_transaksi_ibfk_1` FOREIGN KEY (`id_transaksi`) REFERENCES `transaksi` (`id_transaksi`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `transaksi`
+-- Ketidakleluasaan untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`id_transaksi`) REFERENCES `pembayaran` (`id_transaksi`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `transaksi_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 

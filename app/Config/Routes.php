@@ -64,24 +64,25 @@ $routes->get('/paket/(:any)/edit', 'Paket::edit/$1');
 $routes->post('/paket/(:any)', 'Paket::update/$1');
 $routes->get('/paket/(:any)/delete', 'Paket::delete/$1');
 
-$routes->get('/member', 'member::index');
-$routes->get('/member/new', 'member::new');
-$routes->post('/member', 'member::create');
-$routes->get('/member/(:any)/edit', 'member::edit/$1');
-$routes->post('/member/(:any)', 'member::update/$1');
-$routes->get('/member/(:any)/delete', 'member::delete/$1');
+$routes->get('/member', 'Member::index');
+$routes->get('/member/new', 'Member::new');
+$routes->post('/member', 'Member::create');
+$routes->get('/member/(:any)/edit', 'Member::edit/$1');
+$routes->post('/member/(:any)', 'Member::update/$1');
+$routes->get('/member/(:any)/delete', 'Member::delete/$1');
 
-$routes->get('/transaksi', 'transaksi::index');
-$routes->get('/transaksi/new', 'transaksi::new');
-$routes->post('/transaksi', 'transaksi::create');
-$routes->get('/transaksi/(:any)/edit', 'transaksi::edit/$1');
-$routes->post('/transaksi/(:any)', 'transaksi::update/$1');
-$routes->get('/transaksi/(:any)/delete', 'transaksi::delete/$1');
+$routes->get('/transaksi', 'Transaksi::index');
+$routes->get('/transaksi/new', 'Transaksi::new');
+$routes->post('/transaksi/add_detail', 'Transaksi::add_detail');
+$routes->post('/transaksi', 'Transaksi::create');
+$routes->get('/transaksi/(:any)/edit', 'Transaksi::edit/$1');
+$routes->post('/transaksi/(:any)', 'Transaksi::update/$1');
+$routes->get('/transaksi/(:any)/delete', 'Transaksi::delete/$1');
 
-$routes->get('/dashboard', 'dashboard::admin');
-$routes->get('/dashboard/kasir', 'dashboard::kasir');
-$routes->get('/dashboard/owner', 'dashboard::owner');
-$routes->post('/dashboard', 'dashboard::index');
+$routes->get('/dashboard', 'Dashboard::admin');
+$routes->get('/dashboard/kasir', 'Dashboard::kasir');
+$routes->get('/dashboard/owner', 'Dashboard::owner');
+$routes->post('/dashboard', 'Dashboard::index');
 
 /*
  * --------------------------------------------------------------------
