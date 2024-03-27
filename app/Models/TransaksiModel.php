@@ -25,25 +25,26 @@ class TransaksiModel extends Model
         'alamat',
         'telepon'
     ];
-    function getAll($type = 'paket') {
-    $builder = $this->db->table('transaksi');
-    switch($type) {
-        case 'paket':
-            $builder->join('paket', 'paket.id_paket = transaksi.id_paket');
-            break;
-        case 'user':
-            $builder->join('user', 'user.id = transaksi.id');
-            break;
-        case 'member':
-            $builder->join('member', 'member.id_member = transaksi.id_member');
-            break;
-        default:
-            // Tipe pengambilan data tidak valid
-            return false;
+    function getAll($type = 'paket')
+    {
+        $builder = $this->db->table('transaksi');
+        switch ($type) {
+            case 'paket':
+                $builder->join('paket', 'paket.id_paket = transaksi.id_paket');
+                break;
+            case 'user':
+                $builder->join('user', 'user.id = transaksi.id');
+                break;
+            case 'member':
+                $builder->join('member', 'member.id_member = transaksi.id_member');
+                break;
+            default:
+                // Tipe pengambilan data tidak valid
+                return false;
+        }
+        $query = $builder->get();
+        return $query->getResultArray();
     }
-    $query = $builder->get();
-    return $query->getResultArray();
-}
 
     // function getAll()
     // {
@@ -67,4 +68,3 @@ class TransaksiModel extends Model
     //     return $query->getResultArray();
     // }
 }
-

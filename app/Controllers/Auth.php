@@ -50,7 +50,6 @@ class Auth extends BaseController
                 ];
 
                 // mengatur data session yang masuk
-                $this->session->set($data_login);
                 session()->set($data_login);
 
                 //masuk ke halaman dashboard
