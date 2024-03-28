@@ -127,4 +127,4 @@ _modules/*
 /.phpunit.*.cache
 
 composer.lock
-#.env
+.env
