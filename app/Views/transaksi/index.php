@@ -1,7 +1,8 @@
 <?= $this->extend('template/index') ?>
 
 <?= $this->section('judul') ?>Halaman Kelola Transaksi
-<?= $this->endSection('content') ?>
+<?= $this->endSection('judul') ?>
+
 
 <?= $this->section('content') ?>
 <div class="tabular--wrapper">
@@ -50,6 +51,23 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+
     </div>
 </div>
 <?= $this->endSection('content') ?>
+<?= $this->section('script') ?>
+<script>
+    $('#id_member').change(function() {
+        var member = $(this).val();
+        $.ajax({
+            type: 'GET',
+            url: '<?= base_url('ajax_member'); ?>',
+            data: 'id_member=' + member,
+            success: function(response) {
+                console.log(response);
+                //   $('#email').val(response);
+            }
+        });
+    });
+</script>
+<?= $this->endSection('script') ?>

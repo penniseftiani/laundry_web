@@ -84,6 +84,8 @@ $routes->get('/dashboard/kasir', 'Dashboard::kasir');
 $routes->get('/dashboard/owner', 'Dashboard::owner');
 $routes->post('/dashboard', 'Dashboard::index');
 
+$routes->get('/ajax_member', 'Transaksi::ajax_member');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -120,3 +120,25 @@
 
 </div>
 <?= $this->endSection('content') ?>
+<?= $this->section('script') ?>
+<script>
+    $('#id_member').change(function() {
+        var member = $(this).val();
+        $.ajax({
+            type: 'GET',
+            url: '<?= base_url('ajax_member'); ?>',
+            dataType: 'json',
+            data: 'id_member=' + member,
+            success: function(response) {
+                console.log(response);
+                $('#nama').val(response.nama);
+                $('#telepon').val(response.telepon);
+                $('#alamat').val(response.alamat);
+                //   $('#email').val(response);
+
+                //   $('#email').val(response);
+            }
+        });
+    });
+</script>
+<?= $this->endSection('script') ?>

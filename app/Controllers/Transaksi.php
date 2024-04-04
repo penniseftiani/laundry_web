@@ -27,6 +27,12 @@ class Transaksi extends BaseController
         $this->UserModel = new UserModel();
         $this->MemberModel = new MemberModel();
     }
+    function ajax_member()
+    {
+        $id_member = $this->request->getVar('id_member');
+        $result = $this->MemberModel->find($id_member);
+        echo json_encode($result);
+    }
     public function index()
     {
         $transaksi = $this->TransaksiModel->join('user', 'user.id = transaksi.id_user')->orderBy('id', 'DESC')->findAll();
