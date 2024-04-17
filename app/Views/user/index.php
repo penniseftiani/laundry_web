@@ -25,7 +25,7 @@
                         <td><?= $u['username']; ?></td>
                         <td><?= $u['role']; ?></td>
                         <td>
-                            <a href="<?= base_url('user') . '/' . $u['id'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post">Delete</a>
+                            <a href="<?= base_url('user') . '/' . $u['id'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
                             <a href="<?= base_url('user') . '/' . $u['id'] . '/' . ('edit'); ?>" type="button" class="btn btn-warning btn-sm">Edit</a>
                         </td>
                     </tr>

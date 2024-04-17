@@ -44,7 +44,7 @@
                         <td>
                             <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('detail'); ?>" type="button" class="btn btn-primary btn-sm" method="post">Detail</a>
                             <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post">Delete</a>
-                            <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('edit'); ?>" type="button" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('edit'); ?>" type="button" class="btn btn-warning btn-sm">Ubah</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
