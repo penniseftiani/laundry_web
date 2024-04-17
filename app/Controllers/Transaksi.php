@@ -27,6 +27,12 @@ class Transaksi extends BaseController
         $this->UserModel = new UserModel();
         $this->MemberModel = new MemberModel();
     }
+    function ajax_member()
+    {
+        $id_member = $this->request->getVar('id_member');
+        $result = $this->MemberModel->find($id_member);
+        echo json_encode($result);
+    }
     public function index()
     {
         $transaksi = $this->TransaksiModel->join('user', 'user.id = transaksi.id_user')->orderBy('id', 'DESC')->findAll();
@@ -62,6 +68,19 @@ class Transaksi extends BaseController
         $this->DetailTransaksiModel->save($data);
         return redirect()->to('transaksi/new');
     }
+    public function dell_detail($id)
+    {
+        $result = $this->DetailTransaksiModel->find($id);
+
+        if (!$result) {
+            return redirect()->to('transaksi/new');
+            // dd($id);
+        }
+        $this->DetailTransaksiModel->delete($id);
+
+
+        return redirect()->to('transaksi/new');
+    }
     public function create()
     {
         $kode_invoice = $this->request->getPost('kode_invoice');
@@ -83,6 +102,7 @@ class Transaksi extends BaseController
             'id_user' => session()->get('id'),
             'id_member' => $this->request->getPost('id_member'),
         ];
+
         if ($id_member == 1) {
             // jika umum
             $data['nama'] = $this->request->getPost('nama');
@@ -95,6 +115,7 @@ class Transaksi extends BaseController
             $data['alamat'] = $data_member['alamat'];
             $data['telepon'] = $data_member['telepon'];
         }
+        // dd($data);
         $this->TransaksiModel->save($data);
         $id_transaksi = $this->TransaksiModel->orderBy('id_transaksi', 'DESC')->first()['id_transaksi'];
 

@@ -74,6 +74,7 @@ $routes->get('/member/(:any)/delete', 'Member::delete/$1');
 $routes->get('/transaksi', 'Transaksi::index');
 $routes->get('/transaksi/new', 'Transaksi::new');
 $routes->post('/transaksi/add_detail', 'Transaksi::add_detail');
+$routes->get('/transaksi/dell_detail/(:any)', 'Transaksi::dell_detail/$1');
 $routes->post('/transaksi', 'Transaksi::create');
 $routes->get('/transaksi/(:any)/edit', 'Transaksi::edit/$1');
 $routes->post('/transaksi/(:any)', 'Transaksi::update/$1');
@@ -83,6 +84,8 @@ $routes->get('/dashboard', 'Dashboard::admin');
 $routes->get('/dashboard/kasir', 'Dashboard::kasir');
 $routes->get('/dashboard/owner', 'Dashboard::owner');
 $routes->post('/dashboard', 'Dashboard::index');
+
+$routes->get('/ajax_member', 'Transaksi::ajax_member');
 
 /*
  * --------------------------------------------------------------------

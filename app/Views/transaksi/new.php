@@ -40,6 +40,7 @@
                                 <th>Paket</th>
                                 <th>Qty</th>
                                 <th>SubTotal</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,6 +51,7 @@
                                     <td><?= $d['nama_paket']; ?> | <?= $d['harga_paket']; ?> | <?= $d['nama_jenis_paket']; ?></td>
                                     <td><?= $d['qty']; ?></td>
                                     <td><?= $d['subtotal']; ?></td>
+                                    <td><a href="<?= base_url('transaksi/dell_detail'); ?>/<?= $d['id_detail_transaksi']; ?>">X</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -61,7 +63,7 @@
                     <form action="<?= base_url('transaksi'); ?>" method="post">
                         <label for="kode_invoice" class="form-label">Kode Invoice</label>
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control" id="kode_invoice" name="kode_invoice" aria-describedby="basic-addon3 basic-addon4">
+                            <input type="text" readonly value="<?= time(); ?>" class="form-control" id="kode_invoice" name="kode_invoice" aria-describedby="basic-addon3 basic-addon4">
                         </div>
                         <label for="id_member">Member/UMUM</label>
                         <div class="input-group mb-2">
@@ -120,3 +122,25 @@
 
 </div>
 <?= $this->endSection('content') ?>
+<?= $this->section('script') ?>
+<script>
+    $('#id_member').change(function() {
+        var member = $(this).val();
+        $.ajax({
+            type: 'GET',
+            url: '<?= base_url('ajax_member'); ?>',
+            dataType: 'json',
+            data: 'id_member=' + member,
+            success: function(response) {
+                console.log(response);
+                $('#nama').val(response.nama);
+                $('#telepon').val(response.telepon);
+                $('#alamat').val(response.alamat);
+                //   $('#email').val(response);
+
+                //   $('#email').val(response);
+            }
+        });
+    });
+</script>
+<?= $this->endSection('script') ?>

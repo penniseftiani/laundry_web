@@ -23,6 +23,7 @@ class TransaksiModel extends Model
         'id_member',
         'nama',
         'alamat',
+        'total',
         'telepon'
     ];
     function getAll($type = 'paket')

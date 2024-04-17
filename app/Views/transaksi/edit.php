@@ -22,7 +22,10 @@
         <div>
             <select class="form-control" name="id_member" id="id_member">
                 <?php foreach ($member as $m) : ?>
-                    <option selected value="<?= $m['id_member']; ['nama']; ['alamat']; ['telepon'];?>"></option>
+                    <option selected value="<?= $m['id_member'];
+                                            ['nama'];
+                                            ['alamat'];
+                                            ['telepon']; ?>"></option>
                 <?php endforeach; ?>
             </select>
         </div>
@@ -32,3 +35,17 @@
     </form>
 </div>
 <?= $this->endSection('content') ?>
+<script type="text/javascript">
+    $('#id_member').change(function() {
+        var member = $(this).val();
+        $.ajax({
+            type: 'GET',
+            url: '<?= base_url('ajax_member'); ?>',
+            data: 'id_member=' + member,
+            success: function(response) {
+                console.log(response);
+                //   $('#email').val(response);
+            }
+        });
+    });
+</script>
