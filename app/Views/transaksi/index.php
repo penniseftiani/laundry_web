@@ -45,6 +45,7 @@
                             <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('detail'); ?>" class="btn btn-primary btn-sm">Detail</a>
                             <?php if ($t['status_cucian'] != 'selesai') : ?>
                                 <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('cancel'); ?>" class="btn btn-danger btn-sm">Cancel</a>
+
                             <?php else : ?>
 
                             <?php endif; ?>

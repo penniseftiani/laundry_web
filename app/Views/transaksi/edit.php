@@ -86,6 +86,7 @@
                                 <option <?= ($transaksi['status_cucian'] == 'sedang dicuci') ? 'selected' : ''; ?>>sedang dicuci</option>
                                 <option <?= ($transaksi['status_cucian'] == 'sedang disetrika') ? 'selected' : ''; ?>>sedang disetrika</option>
                                 <option <?= ($transaksi['status_cucian'] == 'selesai') ? 'selected' : ''; ?>>selesai</option>
+                                <option <?= ($transaksi['status_cucian'] == 'cancel') ? 'selected' : ''; ?>>cancel</option>
                             </select>
                         </div>
                         <label for="total" class="form-label">Total Harga</label>
