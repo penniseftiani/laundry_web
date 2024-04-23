@@ -68,6 +68,23 @@ class Transaksi extends BaseController
         $this->DetailTransaksiModel->save($data);
         return redirect()->to('transaksi/new');
     }
+    public function edit_detail($id = false)
+    {
+        $result = $this->PaketModel->find($id);
+
+        if (!$result) {
+            return redirect()->to('transaksi/edit');
+        }
+        $data = [
+            'title' => 'Form edit JenisPaket ',
+            'validation' => \Config\Services::validation(),
+            'jenis_paket' => $this->PaketModel->findAll(),
+            'paket' => $result
+        ];
+        //dd($data);
+
+        echo view('transaksi/edit', $data);
+    }
     public function dell_detail($id)
     {
         $result = $this->DetailTransaksiModel->find($id);
@@ -81,6 +98,7 @@ class Transaksi extends BaseController
 
         return redirect()->to('transaksi/new');
     }
+
     public function create()
     {
         $kode_invoice = $this->request->getPost('kode_invoice');
@@ -133,5 +151,87 @@ class Transaksi extends BaseController
         $this->PembayaranModel->save($data_pembayaran);
         // dd($data);
         return redirect()->to('transaksi');
+    }
+
+    public function edit($id_transaksi = false)
+    {
+        $result = $this->TransaksiModel->find($id_transaksi);
+
+        if (!$result) {
+            return redirect()->to('Paket');
+        }
+        $data = [
+            'paket' => $this->PaketModel->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->findAll(),
+            'user' => $this->UserModel->findAll(),
+            'member' => $this->MemberModel->findAll(),
+            'detail_transaksi' => $this->DetailTransaksiModel->join('paket', 'paket.id_paket = detail_transaksi.id_paket')->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->where('id_transaksi', $id_transaksi)->findAll(),
+            'transaksi' => $result
+        ];
+        //dd($id_transaksi);
+
+        echo view('transaksi/edit', $data);
+    }
+    public function update($id_transaksi = false)
+    {
+        $result = $this->TransaksiModel->find($id_transaksi);
+
+        if (!$result) {
+            return redirect()->to('transaksi');
+        }
+        //dd($_POST);
+        //dd($result);
+        $data = [
+            'status_cucian' => $this->request->getPost('status_cucian'),
+            'status_bayar' => $this->request->getPost('status_bayar')
+        ];
+
+        $this->TransaksiModel->update($id_transaksi, $data);
+
+        $total = $result['total'];
+        $uang_yang_dibayar = $this->request->getPost('uang_yang_dibayar');
+        $kembalian = $uang_yang_dibayar - $total;
+
+        //update tabel pembayaran
+        $data = [
+            'uang_yang_dibayar' => $this->request->getPost('uang_yang_dibayar'),
+            'kembalian' => $kembalian
+        ];
+        $this->PembayaranModel->where('id_transaksi', $id_transaksi)->update(NULL, $data);
+        // dd($data);   
+        return redirect()->to('transaksi');
+    }
+    public function cancel($id_transaksi)
+    {
+        $result = $this->TransaksiModel->find($id_transaksi);
+
+        if (!$result) {
+            return redirect()->to('transaksi');
+            // dd($id_transaksi);
+        }
+        $data = [
+            'status_cucian' => 'cancel'
+        ];
+
+        $this->TransaksiModel->update($id_transaksi, $data);
+        return redirect()->to('transaksi');
+    }
+    public function detail($id_transaksi = false)
+    {
+        $result = $this->TransaksiModel->find($id_transaksi);
+
+        if (!$result) {
+            return redirect()->to('Paket');
+        }
+        $data = [
+            'paket' => $this->PaketModel->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->findAll(),
+            'user' => $this->UserModel->findAll(),
+            'member' => $this->MemberModel->findAll(),
+            'detail_transaksi' => $this->DetailTransaksiModel->join('paket', 'paket.id_paket = detail_transaksi.id_paket')->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->where('id_transaksi', $id_transaksi)->findAll(),
+            'transaksi' => $result,
+            'pembayaran' => $this->PembayaranModel->where('id_transaksi', $id_transaksi)->first()
+        ];
+        //dd($id_transaksi);
+
+        echo view('transaksi/detail', $data);
     }
 }

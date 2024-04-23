@@ -81,7 +81,7 @@
                         <?= csrf_field(); ?>
                         <label for="status_cucian" class="form-label">Status Cucian</label>
                         <div class="input-group mb-2">
-                            <select name="status_cucian" id="status_cucian" class="form-control">
+                            <select disabled name="status_cucian" id="status_cucian" class="form-control">
                                 <option <?= ($transaksi['status_cucian'] == 'baru') ? 'selected' : ''; ?>>baru</option>
                                 <option <?= ($transaksi['status_cucian'] == 'sedang dicuci') ? 'selected' : ''; ?>>sedang dicuci</option>
                                 <option <?= ($transaksi['status_cucian'] == 'sedang disetrika') ? 'selected' : ''; ?>>sedang disetrika</option>
@@ -94,21 +94,19 @@
                         </div>
                         <label for="uang_yang_dibayar" class="form-label">Pembayaran</label>
                         <div class="input-group mb-2">
-                            <input type="number" value="0" class="form-control" id="uang_yang_dibayar" name="uang_yang_dibayar" aria-describedby="basic-addon3 basic-addon4">
+                            <input disabled type="number" value="<?= $pembayaran['uang_yang_dibayar']; ?>" class="form-control" id="uang_yang_dibayar" name="uang_yang_dibayar" aria-describedby="basic-addon3 basic-addon4">
                         </div>
                         <label for="kembalian" class="form-label">Kembalian</label>
                         <div class="input-group mb-2">
-                            <input disabled type="number" class="form-control" id="kembalian" name="kembalian" aria-describedby="basic-addon3 basic-addon4">
+                            <input disabled type="number" value="<?= $pembayaran['kembalian']; ?>" class="form-control" id="kembalian" name="kembalian" aria-describedby="basic-addon3 basic-addon4">
                         </div>
                         <label for="status_bayar">Status Bayar</label>
                         <div class="input-group mb-2">
-                            <select name="status_bayar" id="status_bayar" class="form-control">
+                            <select disabled name="status_bayar" id="status_bayar" class="form-control">
                                 <option <?= ($transaksi['status_bayar'] == 'belum lunas') ? 'selected' : ''; ?>>belum lunas</option>
                                 <option <?= ($transaksi['status_bayar'] == 'lunas') ? 'selected' : ''; ?>>lunas</option>
                             </select>
                         </div>
-
-                        <input type="submit" value="Kirim" class="btn btn-primary">
 
                         <a href="<?= base_url('transaksi'); ?>" class="btn btn-danger">Batal</a>
                     </form>

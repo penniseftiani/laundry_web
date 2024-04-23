@@ -20,9 +20,9 @@
                     <th>ID Member</th>
                     <th>Tanggal Transaksi</th>
                     <th>Tanggal Selesai</th>
+                    <th>Total</th>
                     <th>Status Cucian</th>
                     <th>Status Bayar</th>
-                    <th>Kasir</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -37,15 +37,23 @@
                         <td><?= $t['telepon']; ?></td>
                         <td><?= $t['id_member']; ?></td>
                         <td><?= $t['tgl_transaksi']; ?></td>
-                        <td><?= $t['tanggal_selesai']; ?></td>
+                        <td><?= $t['tanggal_selesai']; ?></td>n
+                        <td><?= $t['total']; ?></td>
                         <td><?= $t['status_cucian']; ?></td>
                         <td><?= $t['status_bayar']; ?></td>
-                        <td><?= $t['username']; ?></td>
-
                         <td>
-                            <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('detail'); ?>" type="button" class="btn btn-primary btn-sm" method="post">Detail</a>
-                            <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post">Delete</a>
-                            <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('edit'); ?>" type="button" class="btn btn-warning btn-sm">Ubah</a>
+                            <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('detail'); ?>" class="btn btn-primary btn-sm">Detail</a>
+                            <?php if ($t['status_cucian'] != 'selesai') : ?>
+                                <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('cancel'); ?>" class="btn btn-danger btn-sm">Cancel</a>
+                            <?php else : ?>
+
+                            <?php endif; ?>
+
+                            <?php if ($t['status_bayar'] == 'belum lunas') : ?>
+                                <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('edit'); ?>" class="btn btn-warning btn-sm">Edit</a>
+                            <?php else : ?>
+
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

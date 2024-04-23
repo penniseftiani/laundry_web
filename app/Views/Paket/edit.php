@@ -32,7 +32,7 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary my-2" onclick= "return confirm('Edit Data Berhasil!')">Submit</button>
+            <button type="submit" class="btn btn-primary my-2">Submit</button>
             <a href="<?= base_url('paket'); ?>" class="btn btn-secondary">Batal</a>
         </form>
     </div>

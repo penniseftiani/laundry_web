@@ -77,8 +77,9 @@ $routes->post('/transaksi/add_detail', 'Transaksi::add_detail');
 $routes->get('/transaksi/dell_detail/(:any)', 'Transaksi::dell_detail/$1');
 $routes->post('/transaksi', 'Transaksi::create');
 $routes->get('/transaksi/(:any)/edit', 'Transaksi::edit/$1');
+$routes->get('/transaksi/(:any)/detail', 'Transaksi::detail/$1');
 $routes->post('/transaksi/(:any)', 'Transaksi::update/$1');
-$routes->get('/transaksi/(:any)/delete', 'Transaksi::delete/$1');
+$routes->get('/transaksi/(:any)/cancel', 'Transaksi::cancel/$1');
 
 $routes->get('/dashboard', 'Dashboard::admin');
 $routes->get('/dashboard/kasir', 'Dashboard::kasir');
