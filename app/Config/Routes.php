@@ -81,12 +81,21 @@ $routes->get('/transaksi/(:any)/detail', 'Transaksi::detail/$1');
 $routes->post('/transaksi/(:any)', 'Transaksi::update/$1');
 $routes->get('/transaksi/(:any)/cancel', 'Transaksi::cancel/$1');
 
+$routes->get('/pembayaran', 'Pembayaran::index');
+$routes->get('/pembayaran/new', 'Pembayaran::new');
+$routes->post('/pembayaran', 'Pembayaran::create');
+$routes->get('/pembayaran/(:any)/edit', 'Pembayaran::edit/$1');
+$routes->get('/pembayaran/(:any)/detail', 'Pembayaran::detail/$1');
+$routes->post('/pembayaran/(:any)', 'Pembayaran::update/$1');
+$routes->get('/pembayaran/(:any)/cancel', 'Pembayaran::cancel/$1');
+
 $routes->get('/dashboard', 'Dashboard::admin');
 $routes->get('/dashboard/kasir', 'Dashboard::kasir');
 $routes->get('/dashboard/owner', 'Dashboard::owner');
 $routes->post('/dashboard', 'Dashboard::index');
 
 $routes->get('/ajax_member', 'Transaksi::ajax_member');
+$routes->get('/ajax_transaksi', 'Pembayaran::ajax_transaksi');
 
 /*
  * --------------------------------------------------------------------

@@ -18,4 +18,12 @@ class PembayaranModel extends Model
         'uang_yang_dibayar',
         'kembalian',
     ];
+    function getAll()
+    {
+        $builder = $this->db->table('pembayaran');
+        //$builder->select('karyawan');
+        $builder->join('transaksi', 'transaksi.id_transaksi = pembayaran.id_transaksi');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }

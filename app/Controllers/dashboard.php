@@ -2,8 +2,32 @@
 
 namespace App\Controllers;
 
+use App\Models\DetailTransaksiModel;
+use App\Models\PaketModel;
+use App\Models\UserModel;
+use App\Models\MemberModel;
+use App\Models\PembayaranModel;
+use App\Models\TransaksiModel;
+
 class dashboard extends BaseController
 {
+    protected $PembayaranModel;
+    protected $DetailTransaksiModel;
+    protected $TransaksiModel;
+    protected $PaketModel;
+    protected $UserModel;
+    protected $MemberModel;
+    private $title = 'Master Transaksi';
+    public function __construct()
+    {
+        $this->PembayaranModel = new PembayaranModel();
+        $this->DetailTransaksiModel = new DetailTransaksiModel();
+        $this->TransaksiModel = new TransaksiModel();
+        $this->PaketModel = new PaketModel();
+        $this->UserModel = new UserModel();
+        $this->MemberModel = new MemberModel();
+    }
+
     public function admin()
     {
         //kalau belum login di kembalikan ke halaman login

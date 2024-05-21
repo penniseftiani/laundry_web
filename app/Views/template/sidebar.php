@@ -20,6 +20,12 @@
             </a>
         </li>
         <li>
+            <a href="<?= base_url('pembayaran'); ?>">
+                <i class="fas fa-chart-bar"></i>
+                <span>Kelola Pembayaran</span>
+            </a>
+        </li>
+        <li>
             <a href="<?= base_url('paket'); ?>">
                 <i class="fas fa-chart-bar"></i>
                 <span>Kelola Paket</span>
@@ -33,15 +39,23 @@
         </li>
         <li>
             <a href="<?= base_url('user'); ?>">
+                <i class="fas fa-chart-bar"></i>
+                <span>Laporan</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?= base_url('user'); ?>">
                 <i class="fa-regular fa-circle-user"></i>
                 <span>Kelola User</span>
             </a>
         </li>
+
         <li class="logout">
             <a href="<?= base_url('logout') ?>">
                 <i class="fas fa-sign-out"></i>
                 <span>Logout</span>
             </a>
         </li>
+
     </ul>
 </div>

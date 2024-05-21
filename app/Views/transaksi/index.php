@@ -37,7 +37,7 @@
                         <td><?= $t['telepon']; ?></td>
                         <td><?= $t['id_member']; ?></td>
                         <td><?= $t['tgl_transaksi']; ?></td>
-                        <td><?= $t['tanggal_selesai']; ?></td>n
+                        <td><?= $t['tanggal_selesai']; ?></td>
                         <td><?= $t['total']; ?></td>
                         <td><?= $t['status_cucian']; ?></td>
                         <td><?= $t['status_bayar']; ?></td>
