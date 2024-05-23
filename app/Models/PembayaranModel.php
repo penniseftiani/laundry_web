@@ -17,6 +17,7 @@ class PembayaranModel extends Model
         'total_harga',
         'uang_yang_dibayar',
         'kembalian',
+        'tanggal_bayar',
     ];
     function getAll()
     {

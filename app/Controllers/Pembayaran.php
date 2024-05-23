@@ -47,19 +47,36 @@ class Pembayaran extends BaseController
         $data = [
             'title' => 'Pembayaran',
             'pembayaran' => $this->PembayaranModel->findAll(),
-            'transaksi' => $this->TransaksiModel->findAll()
+            'transaksi' => $this->TransaksiModel->where('status_bayar', 'belum lunas')->findAll()
         ];
         //dd($data);
         echo view('pembayaran/new', $data);
     }
     public function create()
     {
+        $id_transaksi = $this->request->getPost('id_transaksi');
+        $total  = $this->request->getPost('total');
+        $uang_yang_dibayar  = $this->request->getPost('uang_yang_dibayar');
+        $kembalian = $uang_yang_dibayar - $total;
+
         $data = [
-            'total' => $this->request->getPost('total'),
-            'uang_yang_dibayar' => $this->request->getPost('uang_yang_dibayar'),
-            'kode_invoice' => $this->request->getPost('kode_invoice'),
-            'kembalian' => $kembalian
+            'total_harga' => $total,
+            'uang_yang_dibayar' => $uang_yang_dibayar,
+            'id_transaksi' => $this->request->getPost('id_transaksi'),
+            'status_cucian' => $this->request->getPost('status_cucian'),
+            'kembalian' => $kembalian,
+            'tanggal_bayar' => date('Y-m-d H:i:s')
         ];
+        $this->PembayaranModel->where('id_transaksi', $id_transaksi)->update(null, $data);
+
+        $data_transaksi = [
+            'status_bayar' => $this->request->getPost('status_bayar'),
+        ];
+
+        $this->TransaksiModel->update($id_transaksi, $data_transaksi);
+
+
+        //dd($data);
         return redirect()->to('pembayaran');
     }
     public function detail($id_pembayaran = false)
