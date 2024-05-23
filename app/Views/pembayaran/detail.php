@@ -3,37 +3,106 @@
 <?= $this->section('content') ?>
 
 <div class="tabular--wrapper">
-    <h3 class="main--title">Kelola pembayaran Permata Laundry</h3>
-    <div class="card-header">
-        <h4 class="card-title">Detail pembayaran</h4>
+    <h3 class="main--title">Kelola Pembayaran</h3>
+    <h2>Details pembayaran</h2>
+
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <div class="card">
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <label for="kode_invoice" class="form-label">Kode Invoice</label>
+                        <div class="input-group mb-2">
+                            <input disabled type="text" readonly value="<?= $transaksi['kode_invoice']; ?>" class="form-control" id="kode_invoice" name="kode_invoice" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="id_member">Member/UMUM</label>
+                        <div class="input-group mb-2">
+                            <select disabled class="form-control" name="id_member" id="id_member">
+                                <?php foreach ($member as $t) : ?>
+                                    <?php if ($transaksi['id_member'] == $t['id_member']) : ?>
+                                        <option selected value="<?= $t['id_member']; ?>"><?= $t['id_member']; ?> | <?= $t['nama']; ?></option>
+                                    <?php else : ?>
+                                        <option value="<?= $t['id_member']; ?>"><?= $t['id_member']; ?> | <?= $t['nama']; ?></option>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <label for="nama" class="form-label">Nama</label>
+                        <div class="input-group mb-2">
+                            <input disabled value="<?= $transaksi['nama']; ?>" class="form-control" id="nama" name="nama" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="alamat" class="form-label">Alamat</label>
+                        <div class="input-group mb-2">
+                            <input disabled value="<?= $transaksi['alamat']; ?>" class="form-control" id="alamat" name="alamat" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="telepon" class="form-label">Telepon</label>
+                        <div class="input-group mb-2">
+                            <input disabled value="<?= $transaksi['telepon']; ?>" class="form-control" id="telepon" name="telepon" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="tgl_transaksi" class="form-label">Tanggal Transaksi</label>
+                        <div class="input-group mb-2">
+                            <input disabled value="<?= $transaksi['tgl_transaksi']; ?>" class="form-control" id="tgl_transaksi" name="tgl_transaksi" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="tanggal_pembayaran" class="form-label">Tanggal Pembayaran</label>
+                        <div class="input-group mb-2">
+                            <input disabled value="<?= $pembayaran['tanggal_bayar']; ?>" class="form-control" id="tanggal_pembayaran" name="tanggal_pembayaran" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form action="<?= base_url('transaksi/' . $transaksi['id_transaksi']); ?>" method="post">
+                        <?= csrf_field(); ?>
+                        <label for="status_cucian" class="form-label">Status Cucian</label>
+                        <div class="input-group mb-2">
+                            <select disabled name="status_cucian" id="status_cucian" class="form-control">
+                                <option <?= ($transaksi['status_cucian'] == 'baru') ? 'selected' : ''; ?>>baru</option>
+                                <option <?= ($transaksi['status_cucian'] == 'sedang dicuci') ? 'selected' : ''; ?>>sedang dicuci</option>
+                                <option <?= ($transaksi['status_cucian'] == 'sedang disetrika') ? 'selected' : ''; ?>>sedang disetrika</option>
+                                <option <?= ($transaksi['status_cucian'] == 'selesai') ? 'selected' : ''; ?>>selesai</option>
+                            </select>
+                        </div>
+                        <label for="total" class="form-label">Total Harga</label>
+                        <div class="input-group mb-2">
+                            <input disabled type="text" readonly value="<?= $transaksi['total']; ?>" class="form-control" id="total" name="total" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="uang_yang_dibayar" class="form-label">Pembayaran</label>
+                        <div class="input-group mb-2">
+                            <input disabled type="number" value="<?= $pembayaran['uang_yang_dibayar']; ?>" class="form-control" id="uang_yang_dibayar" name="uang_yang_dibayar" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="kembalian" class="form-label">Kembalian</label>
+                        <div class="input-group mb-2">
+                            <input disabled type="number" value="<?= $pembayaran['kembalian']; ?>" class="form-control" id="kembalian" name="kembalian" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <label for="status_bayar">Status Bayar</label>
+                        <div class="input-group mb-2">
+                            <select disabled name="status_bayar" id="status_bayar" class="form-control">
+                                <option <?= ($transaksi['status_bayar'] == 'belum lunas') ? 'selected' : ''; ?>>belum lunas</option>
+                                <option <?= ($transaksi['status_bayar'] == 'lunas') ? 'selected' : ''; ?>>lunas</option>
+                            </select>
+                        </div>
+
+                        <a href="<?= base_url('pembayaran'); ?>" class="btn btn-danger">Batal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    <div class="card-body">
-        <form action="<?= base_url('pembayaran/' . $pembayaran['id_pembayaran']); ?>" method="post">
-            <?= csrf_field(); ?>
-            <div class="mb-3">
-                <label for="kode_invoice"> Kode Invoice </label>
-                <input value="<?= $pembayaran['kode_invoice']; ?>" type="text" class="form-control" id="kode_invoice" name="nama_pembayaran" aria-describedby="basic-addon3 basic-addon4" autofocus>
-            </div>
-            <div class="mb-3">
-                <label for="total_harga"> Total Harga </label>
-                <input value="<?= $pembayaran['total_harga']; ?>" type="text" class="form-control" id="total_harga" name="harga_pembayaran" aria-describedby="basic-addon3 basic-addon4" autofocus>
-            </div>
-            <div class="mb-3">
-                <label for="nama_pembayaran"> Jenis pembayaran </label>
-                <select class="form-control" name="id_jenis_pembayaran" id="id_jenis_pembayaran">
-                    <?php foreach ($jenis_pembayaran as $p) : ?>
-                        <?php if ($pembayaran['id_jenis_pembayaran'] == $p['id_jenis_pembayaran']) : ?>
-                            <option selected value="<?= $p['id_jenis_pembayaran']; ?>"> <?= $p['nama_jenis_pembayaran']; ?>
-                            <?php else : ?>
-                            <option value="<?= $p['id_jenis_pembayaran']; ?>"><?= $p['nama_jenis_pembayaran']; ?></option>
-                            </option>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary my-2">Submit</button>
-            <a href="<?= base_url('pembayaran'); ?>" class="btn btn-secondary">Batal</a>
-        </form>
-    </div>
-</div>
-<?= $this->endSection('content') ?>
+    <?= $this->endSection('content') ?>
+    <?= $this->section('script') ?>
+    <script>
+        $('#uang_yang_dibayar').on('keyup', function() {
+            var total = parseInt($('#total').val());
+            var uang_yang_dibayar = parseInt($('#uang_yang_dibayar').val());
+            var kembalian = uang_yang_dibayar - total;
+            $('#kembalian').val(kembalian)
+        })
+    </script>
+
+    <?= $this->endSection('script') ?>

@@ -95,11 +95,11 @@
                         </div>
                         <label for="uang_yang_dibayar" class="form-label">Pembayaran</label>
                         <div class="input-group mb-2">
-                            <input type="number" value="0" class="form-control" id="uang_yang_dibayar" name="uang_yang_dibayar" aria-describedby="basic-addon3 basic-addon4">
+                            <input type="number" value="<?= $pembayaran['uang_yang_dibayar']; ?>" class="form-control" id="uang_yang_dibayar" name="uang_yang_dibayar" aria-describedby="basic-addon3 basic-addon4">
                         </div>
                         <label for="kembalian" class="form-label">Kembalian</label>
                         <div class="input-group mb-2">
-                            <input disabled type="number" class="form-control" id="kembalian" name="kembalian" aria-describedby="basic-addon3 basic-addon4">
+                            <input disabled type="number" value="<?= $pembayaran['kembalian']; ?>" class="form-control" id="kembalian" name="kembalian" aria-describedby="basic-addon3 basic-addon4">
                         </div>
                         <label for="status_bayar">Status Bayar</label>
                         <div class="input-group mb-2">

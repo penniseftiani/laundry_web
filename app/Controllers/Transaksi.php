@@ -164,6 +164,7 @@ class Transaksi extends BaseController
             'paket' => $this->PaketModel->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->findAll(),
             'user' => $this->UserModel->findAll(),
             'member' => $this->MemberModel->findAll(),
+            'pembayaran' => $this->PembayaranModel->where('id_transaksi', $id_transaksi)->first(),
             'detail_transaksi' => $this->DetailTransaksiModel->join('paket', 'paket.id_paket = detail_transaksi.id_paket')->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->where('id_transaksi', $id_transaksi)->findAll(),
             'transaksi' => $result
         ];

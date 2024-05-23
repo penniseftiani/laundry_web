@@ -79,17 +79,22 @@ class Pembayaran extends BaseController
         //dd($data);
         return redirect()->to('pembayaran');
     }
-    public function detail($id_pembayaran = false)
+    public function detail($id_transaksi = false)
     {
-        $result = $this->PembayaranModel->find($id_pembayaran);
+        $result = $this->TransaksiModel->find($id_transaksi);
 
         if (!$result) {
             return redirect()->to('Paket');
         }
         $data = [
-            'pembayaran' => $result
+            'paket' => $this->PaketModel->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->findAll(),
+            'user' => $this->UserModel->findAll(),
+            'member' => $this->MemberModel->findAll(),
+            'detail_transaksi' => $this->DetailTransaksiModel->join('paket', 'paket.id_paket = detail_transaksi.id_paket')->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->where('id_transaksi', $id_transaksi)->findAll(),
+            'transaksi' => $result,
+            'pembayaran' => $this->PembayaranModel->where('id_transaksi', $id_transaksi)->first()
         ];
-        //dd($id_transaksi);
+        // dd($data);
 
         echo view('pembayaran/detail', $data);
     }

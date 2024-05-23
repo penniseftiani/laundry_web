@@ -4,7 +4,7 @@
 
 <div class="tabular--wrapper">
     <h3 class="main--title">Kelola Transaksi Permata Laundry</h3>
-    <h2>Edit Transaksi</h2>
+    <h2>Detail Transaksi</h2>
 
     <div class="row">
         <div class="col-md-6 mb-2">

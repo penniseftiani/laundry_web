@@ -50,8 +50,9 @@
 
                             <?php endif; ?>
 
+                            <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('edit'); ?>" class="btn btn-warning btn-sm">Edit</a>
+
                             <?php if ($t['status_bayar'] == 'belum lunas') : ?>
-                                <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('edit'); ?>" class="btn btn-warning btn-sm">Edit</a>
                             <?php else : ?>
 
                             <?php endif; ?>

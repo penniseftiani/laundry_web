@@ -34,7 +34,7 @@
                         <td><?= $p['kembalian']; ?></td>
                         <td><?= $p['status_bayar']; ?></td>
                         <td>
-                            <a href="<?= base_url('pembayaran') . '/' . $p['id_pembayaran'] . '/' . ('detail'); ?>" class="btn btn-primary btn-sm">Detail</a>
+                            <a href="<?= base_url('pembayaran') . '/' . $p['id_transaksi'] . '/' . ('detail'); ?>" class="btn btn-primary btn-sm">Detail</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
