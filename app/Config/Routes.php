@@ -97,6 +97,8 @@ $routes->post('/dashboard', 'Dashboard::index');
 $routes->get('/ajax_member', 'Transaksi::ajax_member');
 $routes->get('/ajax_transaksi', 'Pembayaran::ajax_transaksi');
 
+$routes->get('/lap_transaksi', 'Laporan::transaksi');
+$routes->get('/lap_pembayaran', 'Laporan::pembayaran');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

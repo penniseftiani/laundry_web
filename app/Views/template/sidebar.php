@@ -38,9 +38,15 @@
             </a>
         </li>
         <li>
-            <a href="<?= base_url('user'); ?>">
+            <a href="<?= base_url('lap_transaksi'); ?>">
                 <i class="fas fa-chart-bar"></i>
-                <span>Laporan</span>
+                <span>Laporan Transaksi</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?= base_url('lap_pembayaran'); ?>">
+                <i class="fas fa-chart-bar"></i>
+                <span>Laporan Pembayaran</span>
             </a>
         </li>
         <li>
