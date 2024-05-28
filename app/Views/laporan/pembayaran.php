@@ -7,6 +7,19 @@
 <?= $this->section('content') ?>
 <div class="tabular--wrapper">
     <h3 class="main--title">Laporan Pembayaran Permata Laundry</h3>
+    <form action="" method="get">
+        <div class="row mb-2">
+            <div class="col-md-3">
+                <input type="date" value="<?= $start; ?>" id="start" name="start" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <input type="date" value="<?= $end; ?>" id="end" name="end" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary">submit</button>
+            </div>
+        </div>
+    </form>
     <div class="table--container">
         <table id="table">
             <thead>

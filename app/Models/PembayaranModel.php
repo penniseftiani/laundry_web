@@ -19,11 +19,15 @@ class PembayaranModel extends Model
         'kembalian',
         'tanggal_bayar',
     ];
-    function getAll()
+    function getAll($start = null, $end = null)
     {
         $builder = $this->db->table('pembayaran');
         //$builder->select('karyawan');
         $builder->join('transaksi', 'transaksi.id_transaksi = pembayaran.id_transaksi');
+        if ($start != null) {
+            $builder->where('convert(tanggal_bayar, date) >=', $start);
+            $builder->where('convert(tanggal_bayar, date) <=', $end);
+        }
         $query = $builder->get();
         return $query->getResultArray();
     }

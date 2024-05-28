@@ -42,10 +42,15 @@ class Laporan extends BaseController
     function pembayaran()
     {
         //$pembayaran = $this->PembayaranModel->findAll();
+        $start = $this->request->getVar('start');
+        $end = $this->request->getVar('end');
         $data = [
             'title' => $this->title,
-            'pembayaran' => $this->PembayaranModel->getAll()
+            "start" => $start,
+            "end" => $end,
+            'pembayaran' => $this->PembayaranModel->getAll($start, $end)
         ];
+        //dd($start);
         echo view('laporan/pembayaran', $data);
     }
 }
