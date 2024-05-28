@@ -235,4 +235,24 @@ class Transaksi extends BaseController
 
         echo view('transaksi/detail', $data);
     }
+    public function cetak($id_transaksi)
+    {
+        $result = $this->TransaksiModel->find($id_transaksi);
+
+        if (!$result) {
+            return redirect()->to('Paket');
+        }
+        $data = [
+            'paket' => $this->PaketModel->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->findAll(),
+            'user' => $this->UserModel->findAll(),
+            'member' => $this->MemberModel->findAll(),
+            'detail_transaksi' => $this->DetailTransaksiModel->join('paket', 'paket.id_paket = detail_transaksi.id_paket')->join('jenis_paket', 'jenis_paket.id_jenis_paket = paket.id_jenis_paket')->where('id_transaksi', $id_transaksi)->findAll(),
+            'transaksi' => $result
+        ];
+        // if ($data['transaksi']['status_bayar'] == 'lunas') {
+        $data['pembayaran'] = $this->PembayaranModel->where('id_transaksi', $id_transaksi)->first();
+        // }
+
+        echo view('transaksi/cetak', $data);
+    }
 }

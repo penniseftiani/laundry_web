@@ -1,0 +1,266 @@
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    width: 100%;
+    font-family: 'Open-Sans',sans-serif;
+}
+
+.header {
+    background-color: navy;
+    padding: 2px;
+    text-align: center;
+    color: white;
+    width:  100%;
+    margin:  auto;
+    position: relative;
+}
+
+.wrapper{
+    background-color: #59D5E0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width:  fit-content;
+    margin:  auto;
+    position: relative;
+
+}
+.logo a{
+    font-size: 50px;
+    font-weight: bold;
+    float: left;
+    font-family: Mitr;
+    color: #ffffff;
+}
+
+
+.menu{
+    float: right;
+}
+
+nav{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #ffffff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+img {
+    width: 550px;
+    height: 75%;
+    image-rendering: smooth; 
+}
+.kolom {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.kolom .deskripsi {
+    font-size: 75px;
+    font-weight: bold;
+    font-family: "Style Script", cursive;
+    font-style: normal;
+    color: black;
+}
+
+h4 {
+    font-family: "Strait", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    margin-bottom: 45px;
+    color: black;
+    width: 100%;
+    line-height: 50px;
+}
+
+a.tbl-biru {
+    background: #378CE7;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-biru:hover {
+    background: #59D5E0;
+    text-decoration: none;
+}
+
+a.tbl-pink {
+    background: #EE99C2;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+p {
+    margin: 10px 10px 10px 10px;
+    padding: 10px 0px 10px 0px;
+}
+
+a.tbl-pink:hover {
+    background: #EED3D9;
+    text-decoration: none;
+}
+
+.body-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #59D5E0;
+}
+
+.login-container{
+   width: 100%;
+   display: flex;
+   max-width: 850px;
+   background-color: #fff;
+   border-radius: 15px;
+   box-shadow: 0 10px 15px rgb(0, 0,  0, 0.1);
+}
+
+.login{
+    width: 400px;
+
+}
+
+form{
+    width: 250px;
+    margin: 60px auto;
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+hr{
+    border-top: 2px solid #ffa12c;
+}
+
+p {
+    text-align: center;
+    margin: 10px ;
+}
+
+.right img{
+    width: 450px;
+    height: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;   
+}
+
+form label{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px;
+    
+}
+
+input {
+    width: 100%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 1px solid gray;
+    background-color: #B5C0D0;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 266px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 1px;
+    background: #ffa12c;
+}
+
+.body-admin {
+    display: flex;
+
+}
+
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: rgba(113, 99, 186, 255);
+}
+
+.logo{
+    height: 80px;
+    padding: 16px;
+}
+.menu{
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+.menu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+.menu li:hover.active{
+    background: #e0e0e058;
+
+}

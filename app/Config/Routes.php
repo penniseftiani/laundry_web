@@ -41,7 +41,8 @@ $routes->get('/login', 'Auth::index'); //halaman login
 $routes->post('/login/auth', 'Auth::login'); //proses login
 $routes->get('/logout', 'Auth::logout'); //halaman logout
 
-$routes->get('/', 'Auth::index');
+$routes->get('/', 'Home::index');
+
 $routes->get('/user', 'User::index');
 $routes->get('/user/new', 'User::new');
 $routes->post('/user', 'User::create');
@@ -80,6 +81,7 @@ $routes->get('/transaksi/(:any)/edit', 'Transaksi::edit/$1');
 $routes->get('/transaksi/(:any)/detail', 'Transaksi::detail/$1');
 $routes->post('/transaksi/(:any)', 'Transaksi::update/$1');
 $routes->get('/transaksi/(:any)/cancel', 'Transaksi::cancel/$1');
+$routes->get('/transaksi/(:any)/cetak', 'Transaksi::cetak/$1');
 
 $routes->get('/pembayaran', 'Pembayaran::index');
 $routes->get('/pembayaran/new', 'Pembayaran::new');

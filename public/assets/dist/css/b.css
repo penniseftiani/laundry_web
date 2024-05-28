@@ -241,9 +241,9 @@ td {
   color: #333;
 }
 tr:nth-child(even) {
-  background: rgba(113, 99, 186, 225);
-  font-weight: bold;
-  color: #fff;
+  /* background: rgba(113, 99, 186, 225); */
+  /* font-weight: bold; */
+  /* color: #fff; */
 }
 tfoot td {
   padding: 15px;

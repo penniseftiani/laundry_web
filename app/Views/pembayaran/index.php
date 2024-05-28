@@ -9,7 +9,7 @@
     <h3 class="main--title">Kelola Pembayaran Permata Laundry</h3>
     <a href="<?= base_url('pembayaran/new'); ?>" style="text-decoration: none; margin:none" class="btn btn-primary btn-sm mb-3">Bayar</a>
     <div class="table--container">
-        <table>
+        <table id="table">
             <thead>
                 <tr>
                     <th>NO</th>

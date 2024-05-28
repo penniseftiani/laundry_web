@@ -8,7 +8,7 @@
     <h3 class="main--title">Kelola Paket Permata Laundry</h3>
     <a href="<?= base_url('paket/new'); ?>" style="text-decoration: none; margin:none" class="btn btn-primary btn-sm mb-3">Tambah</a>
     <div class="table--container">
-        <table>
+        <table id="table">
             <thead>
                 <tr>
                     <th>NO</th>

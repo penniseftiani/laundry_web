@@ -51,6 +51,9 @@ class dashboard extends BaseController
 
     public function kasir()
     {
+        $role = session()->get("role");
+
+        //dd($_SESSION);
         return view('dashboard/kasir');
     }
     public function owner()
