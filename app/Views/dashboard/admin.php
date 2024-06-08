@@ -87,4 +87,5 @@
             </table>
         </div>
     </div>
-    <?= $this->endSection('content') ?>
+</div>
+<?= $this->endSection('content') ?>
