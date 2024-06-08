@@ -10,21 +10,34 @@
                 <div class="card--header">
                     <div class="amount">
                         <span class="title">
-                            Detail Transaksi
+                            Total Transaksi
                         </span>
-                        <span class="amount--value">Rp500.00</span>
+                        <span class="amount--value">Rp.<?= number_format($total_transaksi, 0, ',', '.'); ?></span>
                     </div>
                     <i class="fas fa-rupiah-sign icon"></i>
                 </div>
                 <span class="card-detail">****</span>
             </div>
+            <div class="payment--card light-red">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">
+                            Total Pembayaran
+                        </span>
+                        <span class="amount--value">Rp.<?= number_format($total_pembayaran, 0, ',', '.'); ?></span>
+                    </div>
+                    <i class="fas fa-rupiah-sign icon"></i>
+                </div>
+                <span class="card-detail">****</span>
+            </div>
+
             <div class="payment--card light-purple">
                 <div class="card--header">
                     <div class="amount">
                         <span class="title">
-                            Jumlah Order Cucian
+                            Jumlah transaksi
                         </span>
-                        <span class="amount--value">20 Prs</span>
+                        <span class="amount--value"><?= $jumlah_transaksi; ?></span>
                     </div>
                     <i class="fas fa-list icon dark-purple"></i>
                 </div>
@@ -34,9 +47,9 @@
                 <div class="card--header">
                     <div class="amount">
                         <span class="title">
-                            Status Cucian
+                            jumlah pembayaran
                         </span>
-                        <span class="amount--value">Selesai</span>
+                        <span class="amount--value"><?= $jumlah_pembayaran; ?></span>
                     </div>
                     <i class="fas fa-check icon dark-blue"></i>
                 </div>
@@ -53,11 +66,24 @@
                         <th>Tanggal</th>
                         <th>Kode Invoice</th>
                         <th>Nama Pelanggan</th>
-                        <th>Jenis Paket</th>
-                        <th>Harga</th>
-                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Status Cucian</th>
+                        <th>Status Bayar</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <?php foreach ($transaksi as $t) : ?>
+                        <tr>
+                            <td><?= $t['tgl_transaksi']; ?></td>
+                            <td><?= $t['kode_invoice']; ?></td>
+                            <td><?= $t['nama']; ?></td>
+                            <td><?= $t['total']; ?></td>
+                            <td><?= $t['status_cucian']; ?></td>
+                            <td><?= $t['status_bayar']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+
             </table>
         </div>
     </div>

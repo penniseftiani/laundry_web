@@ -30,11 +30,35 @@ class dashboard extends BaseController
 
     public function admin()
     {
+
         //kalau belum login di kembalikan ke halaman login
         if (!session()->get('logged_in')) {
             return redirect()->to('login');
         }
-        return view('dashboard/admin');
+        // $jumlah_transaksi = db_connect()->query("SELECT SUM(total) as total_transaksi FROM transaksi WHERE convert(tgl_transaksi,date) = '2024-05-22';")->getRowArray();
+
+        $total_transaksi = $this->TransaksiModel->select('SUM(total) as total_transaksi')->first();
+
+        $total_pembayaran = $this->PembayaranModel->select('SUM(uang_yang_dibayar) as total_pembayaran')->first();
+
+        // $total_transaksi = $this->TransaksiModel->select('SUM(total) as total_transaksi')->where('convert(tgl_transaksi,date)', '2024-05-22')->first();
+        $jumlah_transaksi = $this->TransaksiModel->select("COUNT(total) as total_transaksi")->first();
+
+        $jumlah_pembayaran = $this->PembayaranModel->select("COUNT(id_pembayaran) as total_pembayaran")->where("uang_yang_dibayar != 0")->first();
+
+        $transaksi = $this->TransaksiModel->join('user', 'user.id = transaksi.id_user')->orderBy('id', 'DESC')->where("convert(tgl_transaksi,date)", date("Y-m-d"))->findAll();
+        //dd(date("Y-m-d "));
+
+        $data = [
+            'transaksi' => $transaksi,
+            'total_transaksi' => $total_transaksi['total_transaksi'],
+            'total_pembayaran' => $total_pembayaran['total_pembayaran'],
+            'jumlah_transaksi' => $jumlah_transaksi['total_transaksi'],
+            'jumlah_pembayaran' => $jumlah_pembayaran['total_pembayaran']
+        ];
+        //dd($total_pembayaran);
+
+        return view('dashboard/admin', $data);
     }
 
     public function logout()
@@ -53,19 +77,52 @@ class dashboard extends BaseController
     {
         $role = session()->get("role");
 
+
+        $total_transaksi = $this->TransaksiModel->select('SUM(total) as total_transaksi')->first();
+
+        $total_pembayaran = $this->PembayaranModel->select('SUM(uang_yang_dibayar) as total_pembayaran')->first();
+
+        // $total_transaksi = $this->TransaksiModel->select('SUM(total) as total_transaksi')->where('convert(tgl_transaksi,date)', '2024-05-22')->first();
+        $jumlah_transaksi = $this->TransaksiModel->select("COUNT(total) as total_transaksi")->first();
+
+        $jumlah_pembayaran = $this->PembayaranModel->select("COUNT(id_pembayaran) as total_pembayaran")->where("uang_yang_dibayar != 0")->first();
+
+        $transaksi = $this->TransaksiModel->join('user', 'user.id = transaksi.id_user')->orderBy('id', 'DESC')->where("convert(tgl_transaksi,date)", date("Y-m-d"))->findAll();
+        //dd(date("Y-m-d "));
+
+        $data = [
+            'transaksi' => $transaksi,
+            'total_transaksi' => $total_transaksi['total_transaksi'],
+            'total_pembayaran' => $total_pembayaran['total_pembayaran'],
+            'jumlah_transaksi' => $jumlah_transaksi['total_transaksi'],
+            'jumlah_pembayaran' => $jumlah_pembayaran['total_pembayaran']
+        ];
         //dd($_SESSION);
-        return view('dashboard/kasir');
+        return view('dashboard/kasir', $data);
     }
     public function owner()
     {
-        return view('dashboard/owner');
-    }
-    public function paket()
-    {
-        return view('dashboard/paket');
-    }
-    public function tambahpaket()
-    {
-        return view('dashboard/tambahpaket');
+
+        $total_transaksi = $this->TransaksiModel->select('SUM(total) as total_transaksi')->first();
+
+        $total_pembayaran = $this->PembayaranModel->select('SUM(uang_yang_dibayar) as total_pembayaran')->first();
+
+        // $total_transaksi = $this->TransaksiModel->select('SUM(total) as total_transaksi')->where('convert(tgl_transaksi,date)', '2024-05-22')->first();
+        $jumlah_transaksi = $this->TransaksiModel->select("COUNT(total) as total_transaksi")->first();
+
+        $jumlah_pembayaran = $this->PembayaranModel->select("COUNT(id_pembayaran) as total_pembayaran")->where("uang_yang_dibayar != 0")->first();
+
+        $transaksi = $this->TransaksiModel->join('user', 'user.id = transaksi.id_user')->orderBy('id', 'DESC')->where("convert(tgl_transaksi,date)", date("Y-m-d"))->findAll();
+        //dd(date("Y-m-d "));
+
+        $data = [
+            'transaksi' => $transaksi,
+            'total_transaksi' => $total_transaksi['total_transaksi'],
+            'total_pembayaran' => $total_pembayaran['total_pembayaran'],
+            'jumlah_transaksi' => $jumlah_transaksi['total_transaksi'],
+            'jumlah_pembayaran' => $jumlah_pembayaran['total_pembayaran']
+        ];
+        // dd($total_transaksi);
+        echo view('transaksi/index', $data);
     }
 }

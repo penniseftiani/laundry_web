@@ -26,22 +26,12 @@ class TransaksiModel extends Model
         'total',
         'telepon'
     ];
-    function getAll($type = 'paket')
+    function getAll($start = null, $end = null)
     {
         $builder = $this->db->table('transaksi');
-        switch ($type) {
-            case 'paket':
-                $builder->join('paket', 'paket.id_paket = transaksi.id_paket');
-                break;
-            case 'user':
-                $builder->join('user', 'user.id = transaksi.id');
-                break;
-            case 'member':
-                $builder->join('member', 'member.id_member = transaksi.id_member');
-                break;
-            default:
-                // Tipe pengambilan data tidak valid
-                return false;
+        if ($start != null) {
+            $builder->where('convert(tgl_transaksi, date) >=', $start);
+            $builder->where('convert(tgl_transaksi, date) <=', $end);
         }
         $query = $builder->get();
         return $query->getResultArray();

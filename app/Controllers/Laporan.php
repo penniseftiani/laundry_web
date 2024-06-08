@@ -31,11 +31,16 @@ class Laporan extends BaseController
 
     function transaksi()
     {
-        $transaksi = $this->TransaksiModel->join('user', 'user.id = transaksi.id_user')->orderBy('id', 'DESC')->findAll();
+        //$transaksi = $this->TransaksiModel->findAll();
+        $start = $this->request->getVar('start');
+        $end = $this->request->getVar('end');
         $data = [
             'title' => $this->title,
-            'transaksi' => $transaksi
+            "start" => $start,
+            "end" => $end,
+            "transaksi" => $this->TransaksiModel->getAll($start, $end)
         ];
+        //dd($data);
         echo view('laporan/transaksi', $data);
     }
 
