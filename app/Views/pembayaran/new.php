@@ -11,7 +11,12 @@
             <select class="form-control" name="id_transaksi" id="id_transaksi">
                 <option selected disabled>==SELECT==</option>
                 <?php foreach ($transaksi as $t) : ?>
-                    <option value="<?= $t['id_transaksi']; ?>"> <?= $t['kode_invoice']; ?></option>
+                    <?php if ($t['kode_invoice'] == $_GET['kode_invoice']) : ?>
+                        <option selected value="<?= $t['id_transaksi']; ?>"> <?= $t['kode_invoice']; ?></option>
+                    <?php else : ?>
+                        <option value="<?= $t['id_transaksi']; ?>"> <?= $t['kode_invoice']; ?></option>
+                    <?php endif; ?>
+
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -35,13 +40,6 @@
             <div class="input-group mb-2">
                 <input readonly type="number" class="form-control" id="kembalian" name="kembalian" aria-describedby="basic-addon3 basic-addon4">
             </div>
-            <label for="status_bayar">Status Bayar</label>
-            <div class="input-group mb-2">
-                <select name="status_bayar" id="status_bayar" class="form-control">
-                    <option>lunas</option>
-                    <option>belum lunas</option>
-                </select>
-            </div>
             <input type="submit" value="Kirim" class="btn btn-primary">
             <a href="<?= base_url('pembayaran'); ?>" class="btn btn-danger">Batal</a>
     </form>
@@ -49,8 +47,8 @@
 <?= $this->endSection('content') ?>
 <?= $this->section('script') ?>
 <script>
-    $('#id_transaksi').change(function() {
-        var transaksi = $(this).val();
+    function get_transaksi() {
+        var transaksi = $('#id_transaksi').val();
         $.ajax({
             type: 'GET',
             url: '<?= base_url('ajax_transaksi'); ?>',
@@ -67,7 +65,11 @@
                 //   $('#email').val(response);
             }
         });
+    }
+    $('#id_transaksi').change(function() {
+        get_transaksi();
     });
+    get_transaksi();
 
     $('#uang_yang_dibayar').on('keyup', function() {
         // ambil inpu total

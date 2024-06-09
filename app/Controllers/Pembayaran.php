@@ -58,7 +58,9 @@ class Pembayaran extends BaseController
         $total  = $this->request->getPost('total');
         $uang_yang_dibayar  = $this->request->getPost('uang_yang_dibayar');
         $kembalian = $uang_yang_dibayar - $total;
-
+        if ($kembalian < 0) {
+            return redirect()->back();
+        }
         $data = [
             'total_harga' => $total,
             'uang_yang_dibayar' => $uang_yang_dibayar,
@@ -70,7 +72,7 @@ class Pembayaran extends BaseController
         $this->PembayaranModel->where('id_transaksi', $id_transaksi)->update(null, $data);
 
         $data_transaksi = [
-            'status_bayar' => $this->request->getPost('status_bayar'),
+            'status_bayar' => 'lunas',
         ];
 
         $this->TransaksiModel->update($id_transaksi, $data_transaksi);

@@ -7,7 +7,6 @@
 <?= $this->section('content') ?>
 <div class="tabular--wrapper">
     <h3 class="main--title">Kelola Pembayaran Permata Laundry</h3>
-    <a href="<?= base_url('pembayaran/new'); ?>" style="text-decoration: none; margin:none" class="btn btn-primary btn-sm mb-3">Bayar</a>
     <div class="table--container">
         <table id="table">
             <thead>
@@ -36,7 +35,11 @@
                         <td><?= $p['kembalian']; ?></td>
                         <td><?= $p['status_bayar']; ?></td>
                         <td>
+                            <?php if ($p['status_bayar'] != 'lunas') : ?>
+                                <a href="<?= base_url('pembayaran') . '/new?kode_invoice=' . $p['kode_invoice']; ?>" class="btn btn-warning btn-sm">Bayar</a>
+                            <?php endif; ?>
                             <a href="<?= base_url('pembayaran') . '/' . $p['id_transaksi'] . '/' . ('detail'); ?>" class="btn btn-primary btn-sm">Detail</a>
+
                         </td>
                     </tr>
                 <?php endforeach; ?>
