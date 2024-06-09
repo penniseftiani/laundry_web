@@ -11,7 +11,7 @@
             <select class="form-control" name="id_transaksi" id="id_transaksi">
                 <option selected disabled>==SELECT==</option>
                 <?php foreach ($transaksi as $t) : ?>
-                    <?php if ($t['kode_invoice'] == $_GET['kode_invoice']) : ?>
+                    <?php if ($t['kode_invoice'] == @$_GET['kode_invoice']) : ?>
                         <option selected value="<?= $t['id_transaksi']; ?>"> <?= $t['kode_invoice']; ?></option>
                     <?php else : ?>
                         <option value="<?= $t['id_transaksi']; ?>"> <?= $t['kode_invoice']; ?></option>
