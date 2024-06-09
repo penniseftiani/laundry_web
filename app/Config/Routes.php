@@ -42,6 +42,7 @@ $routes->post('/login/auth', 'Auth::login'); //proses login
 $routes->get('/logout', 'Auth::logout'); //halaman logout
 
 $routes->get('/', 'Home::index');
+$routes->get('/cek_invoice', 'Home::cek_invoice');
 
 $routes->get('/user', 'User::index');
 $routes->get('/user/new', 'User::new');
