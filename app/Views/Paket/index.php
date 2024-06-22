@@ -27,7 +27,7 @@
                         <td><?= $p['harga_paket']; ?></td>
                         <td><?= $p['nama_jenis_paket']; ?></td>
                         <td>
-                            <a href="<?= base_url('paket') . '/' . $p['id_paket'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post">Delete</a>
+                            <a href="<?= base_url('paket') . '/' . $p['id_paket'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data ini?')">Delete</a>
                             <a href="<?= base_url('paket') . '/' . $p['id_paket'] . '/' . ('edit'); ?>" type="button" class="btn btn-warning btn-sm">Edit</a>
                         </td>
                     </tr>

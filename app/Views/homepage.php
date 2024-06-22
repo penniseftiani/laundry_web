@@ -20,7 +20,7 @@
             <div class="menu
             ">
                 <ul>
-                    <li><a href="<?= base_url('login') ?>" class="tbl-biru">Login</a></li>
+                    <!-- <li><a href="<?= base_url('login') ?>" class="tbl-biru">Login</a></li> -->
                     <li><a href="<?= base_url('cek_invoice') ?>" style="color: white">Cek Kode Invoice</a></li>
                 </ul>
             </div>
@@ -32,9 +32,9 @@
             <div class="kolom">
                 <p class="deskripsi">Permata Laundry </p>
                 <h4>Solusi Tepat untuk yang tidak Sempat</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, aliquam?
+                <p>Jln.D.I Pandjaitan Gg.Sukun Kota Subang Kabupaten Subang
                 </p>
-                <p><a href="" class="tbl-pink">Detail Mengenai Toko</a></p>
+                <!-- <p><a href="" class="tbl-pink">Detail Mengenai Toko</a></p> -->
             </div>
         </section>
     </div>

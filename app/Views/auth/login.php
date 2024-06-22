@@ -20,9 +20,6 @@
                 <label for="">Password</label>
                 <input type="password" id="password" name="password" required placeholder="Password">
                 <button>Login</button>
-                <p>
-                    <a href="">Forgot password ?</a>
-                </p>
             </form>
         </div>
         <div class="right">

@@ -20,7 +20,7 @@
             <div class="logo"><a href="">Permata Laundry</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="<?= base_url('login') ?>" class="tbl-biru">Login</a></li>
+                    <!-- <li><a href="<?= base_url('login') ?>" class="tbl-biru">Login</a></li> -->
                     <li><a href="<?= base_url('cek_invoice') ?>" style="color: white">Cek Kode Invoice</a></li>
                 </ul>
             </div>

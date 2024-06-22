@@ -46,7 +46,7 @@
                                 <a target="_blank" href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('cetak'); ?>" class="btn btn-info btn-sm">Cetak</a>
                                 <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('detail'); ?>" class="btn btn-primary btn-sm">Detail</a>
                                 <?php if ($t['status_bayar'] !=  'lunas' or $t['status_cucian'] != 'selesai') : ?>
-                                    <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('cancel'); ?>" class="btn btn-danger btn-sm">Cancel</a>
+                                    <a href="<?= base_url('transaksi') . '/' . $t['id_transaksi'] . '/' . ('cancel'); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin Ingin Cancel Data ini?')">Cancel</a>
                                 <?php endif; ?>
                                 <!-- jika status bayar belunas lunas dan status cucian selain selesai maka akan menampilkan button edit -->
                                 <?php if ($t['status_bayar'] = 'belum lunas' and $t['status_cucian'] != 'selesai') : ?>

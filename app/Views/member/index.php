@@ -27,7 +27,7 @@
                         <td><?= $m['alamat']; ?></td>
                         <td><?= $m['telepon']; ?></td>
                         <td>
-                            <a href="<?= base_url('member') . '/' . $m['id_member'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post">Delete</a>
+                            <a href="<?= base_url('member') . '/' . $m['id_member'] . '/' . ('delete'); ?>" type="button" class="btn btn-danger btn-sm" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
                             <a href="<?= base_url('member') . '/' . $m['id_member'] . '/' . ('edit'); ?>" type="button" class="btn btn-warning btn-sm">Edit</a>
                         </td>
                     </tr>
